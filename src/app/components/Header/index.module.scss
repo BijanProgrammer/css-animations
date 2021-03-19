@@ -1,0 +1,22 @@
+@use "src/app/styles" as *;
+
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	
+	padding: $density-wide;
+	
+	&__logo {
+		&__link {
+			font-size: $font-size-larger;
+			font-weight: $font-weight-bold;
+		}
+	}
+	
+	&__github {
+		&__icon {
+			font-size: $font-size-larger !important;
+		}
+	}
+}

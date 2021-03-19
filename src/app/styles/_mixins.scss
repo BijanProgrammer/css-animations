@@ -1,0 +1,24 @@
+@use "colors" as *;
+
+/*************** COLORS ***************/
+@mixin extract-color($color) {
+	@include extract-background($color);
+	@include extract-text($color);
+}
+
+@mixin extract-background($color) {
+	background: map-get($color, background);
+}
+
+@mixin extract-text($color) {
+	color: map-get($color, text);
+}
+
+/************* TRANSITIONS ************/
+@mixin grow-on-hover($scale: 1.1, $duration: 0.1s) {
+	transition: transform $duration ease-in-out;
+	
+	&:hover {
+		transform: scale($scale, $scale);
+	}
+}

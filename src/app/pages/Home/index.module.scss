@@ -1,0 +1,9 @@
+@use "src/app/styles" as *;
+
+.home {
+	display: grid;
+	place-items: center;
+	
+	font-size: $font-size-largest;
+	font-weight: $font-weight-bold;
+}
