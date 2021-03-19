@@ -1,1 +1,3 @@
-# css-animations
+# CSS Animations
+
+Developed by @BijanProgrammer
