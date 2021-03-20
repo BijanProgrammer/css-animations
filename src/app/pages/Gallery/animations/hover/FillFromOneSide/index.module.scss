@@ -1,0 +1,47 @@
+@use "src/app/styles" as *;
+
+.button {
+	$color: map-get($color-button-idle, background);
+	
+	background: transparent;
+	color: $color;
+	
+	position: relative;
+	overflow: hidden;
+	
+	border: $dimension-button-outline solid $color;
+	
+	&,
+	&::before {
+		transition: all $animation-duration ease-in-out;
+	}
+	
+	&::before {
+		content: "";
+		
+		background: map-get($color-button-hover, background);
+		
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: -1;
+		
+		transform: translateX(-100%);
+	}
+	
+	&:hover {
+		color: map-get($color-button-hover, text);
+		
+		z-index: 1;
+		
+		border-color: map-get($color-button-hover, background);
+		
+		&::before {
+			background: map-get($color-button-hover, background);
+			
+			transform: translateX(0%);
+		}
+	}
+}

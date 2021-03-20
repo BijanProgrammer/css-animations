@@ -32,9 +32,19 @@ $color-dark: (
 	text: $color-gray-98
 );
 
-$color-button-idle: (
+$color-low-priority: (
 	background: $color-gray-90,
 	text: $color-gray-40
+);
+
+$color-button-idle: (
+	background: $color-primary-dark,
+	text: $color-gray-98
+);
+
+$color-button-hover: (
+	background: $color-primary-light,
+	text: $color-gray-98
 );
 
 // not used yet >>>

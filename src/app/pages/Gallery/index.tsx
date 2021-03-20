@@ -15,15 +15,21 @@ const Gallery = () => {
 					{
 						animationRoutes.map(route => (
 							<Route key={route.key} path={`/gallery/${route.key}`}>
-								<div className={styles['gallery__table']}>
+								<h2 className={styles['gallery__title']}>
+									Gallery |
+									<span className={styles['gallery__title__key']}>{route.key}</span>
+									Animations
+								</h2>
+								
+								<ol className={styles['gallery__table']}>
 									{
 										route.animations.map((animation, i) => (
-											<div key={i} className={styles['gallery__table__cell']}>
+											<li key={i} className={styles['gallery__table__cell']}>
 												{animation}
-											</div>
+											</li>
 										))
 									}
-								</div>
+								</ol>
 							</Route>
 						))
 					}

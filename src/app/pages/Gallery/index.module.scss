@@ -1,9 +1,74 @@
 @use "src/app/styles" as *;
 
 .gallery {
-	&__table {
-		&__cell {
+	$max-width: 120rem;
+	$cell-width: 30rem;
+	$cell-height: 15rem;
+	$row-gap: 5rem;
+	$index-indent: 1rem;
+	
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	
+	max-width: $max-width;
+	
+	&__title {
+		color: map-get($color-low-priority, text);
 		
+		margin: $row-gap auto;
+		
+		font-size: $font-size-larger;
+		font-weight: $font-weight-medium;
+		
+		&__key {
+			color: map-get($color-light, text);
+			
+			font-size: $font-size-larger + 0.4rem;
+			font-weight: $font-weight-bold;
+			text-transform: capitalize;
+			
+			&::before,
+			&::after {
+				content: " ";
+			}
+		}
+	}
+	
+	&__table {
+		display: grid;
+		grid-auto-rows: $cell-height;
+		grid-template-columns: repeat(auto-fill, $cell-width);
+		row-gap: $row-gap;
+		justify-content: center;
+		
+		width: 100%;
+		
+		list-style: none;
+		counter-reset: animation-counter;
+		
+		&__cell {
+			position: relative;
+			
+			display: grid;
+			place-items: center;
+			
+			counter-increment: animation-counter;
+			
+			//outline: solid 1px black;
+			
+			&::before {
+				content: counter(animation-counter, decimal-leading-zero);
+				
+				color: map-get($color-low-priority, text);
+				
+				position: absolute;
+				top: $index-indent;
+				left: $index-indent;
+				
+				font-size: $font-size-small;
+				font-weight: $font-weight-bold;
+			}
 		}
 	}
 }

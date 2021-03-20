@@ -1,0 +1,19 @@
+@use "src/app/styles" as * ;
+
+.button {
+	$color: map-get($color-button-idle, background);
+	
+	background: transparent;
+	color: $color;
+	
+	border: $dimension-button-outline solid $color;
+	
+	transition: all $animation-duration ease-in-out;
+	
+	&:hover {
+		background: map-get($color-button-hover, background);
+		color: map-get($color-button-hover, text);
+		
+		border: $dimension-button-outline solid map-get($color-button-hover, background);
+	}
+}

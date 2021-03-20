@@ -1,8 +1,12 @@
 @use "app/styles" as *;
 
+:root {
+	@include generate-density-variables;
+}
+
 *,
-*:before,
-*:after {
+*::before,
+*::after {
 	background: none;
 	
 	box-sizing: border-box;
@@ -61,13 +65,15 @@ body {
 }
 
 a {
-	@include extract-text($color-light);
+	color: map-get($color-light, text);
 }
 
 button {
 	@include extract-color($color-button-idle);
 	
-	padding: $density-normal $density-wide;
+	min-width: 15rem;
+	
+	padding: var(--density-normal) var(--density-wide);
 	
 	border-radius: 999rem;
 	

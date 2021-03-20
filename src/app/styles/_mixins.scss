@@ -1,18 +1,54 @@
-@use "colors" as *;
+@use "color" as *;
+@use "density" as *;
+
+/************** VARIABLES *************/
+$media-query-breakpoints: (
+	large: 600px
+);
+
+/************* RESPONSIVE *************/
+@mixin media-query($key) {
+	$size: map-get($media-query-breakpoints, $key);
+	
+	@media only screen and (min-width: $size) {
+		@content;
+	}
+}
+
+/************* GENERATORS *************/
+//@mixin generate-color-variables {
+//	@each $name, $wrapper in $colors {
+//		@each $type, $value in $wrapper {
+//			--color-#{$name}-#{$type}: #{$value};
+//		}
+//	}
+//}
+
+@mixin generate-density-variables {
+	@each $screen-size, $density in $densities {
+		@if $screen-size == small {
+			@include _generate-density-variables($density);
+		} @else if $screen-size == large {
+			@include media-query(large) {
+				@include _generate-density-variables($density);
+			}
+		}
+	}
+}
+
+@mixin _generate-density-variables($density) {
+	@each $size, $value in $density {
+		--density-#{$size}: #{$value};
+	}
+}
 
 /*************** COLORS ***************/
 @mixin extract-color($color) {
-	@include extract-background($color);
-	@include extract-text($color);
-}
-
-@mixin extract-background($color) {
 	background: map-get($color, background);
-}
-
-@mixin extract-text($color) {
 	color: map-get($color, text);
 }
+
+/*************** LAYOUTS **************/
 
 /************* TRANSITIONS ************/
 @mixin grow-on-hover($scale: 1.1, $duration: 0.1s) {

@@ -1,47 +1,12 @@
-import ButtonExpand from './ButtonExpand';
+import Expand from './Expand';
+import FillFromOneSide from './FillFromOneSide';
+import Fill from './Fill';
 
 const wrapper = {
 	animations: [
-		<ButtonExpand/>,
-		<ButtonExpand/>,
-		<ButtonExpand/>,
-		<ButtonExpand/>,
-		<ButtonExpand/>,
-		<ButtonExpand/>,
-		<ButtonExpand/>,
-		<ButtonExpand/>,
-		<ButtonExpand/>,
-		<ButtonExpand/>,
-		<ButtonExpand/>,
-		<ButtonExpand/>,
-		<ButtonExpand/>,
-		<ButtonExpand/>,
-		<ButtonExpand/>,
-		<ButtonExpand/>,
-		<ButtonExpand/>,
-		<ButtonExpand/>,
-		<ButtonExpand/>,
-		<ButtonExpand/>,
-		<ButtonExpand/>,
-		<ButtonExpand/>,
-		<ButtonExpand/>,
-		<ButtonExpand/>,
-		<ButtonExpand/>,
-		<ButtonExpand/>,
-		<ButtonExpand/>,
-		<ButtonExpand/>,
-		<ButtonExpand/>,
-		<ButtonExpand/>,
-		<ButtonExpand/>,
-		<ButtonExpand/>,
-		<ButtonExpand/>,
-		<ButtonExpand/>,
-		<ButtonExpand/>,
-		<ButtonExpand/>,
-		<ButtonExpand/>,
-		<ButtonExpand/>,
-		<ButtonExpand/>,
-		<ButtonExpand/>
+		<Expand/>,
+		<Fill/>,
+		<FillFromOneSide/>
 	]
 };
 

@@ -1,0 +1,13 @@
+@use "src/app/styles" as * ;
+
+.button {
+	transform: scale(1);
+	
+	transition: all $animation-duration ease-in-out;
+	
+	&:hover {
+		@include extract-color($color-button-hover);
+		
+		transform: scale(1.1);
+	}
+}

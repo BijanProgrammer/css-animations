@@ -5,7 +5,7 @@
 	align-items: center;
 	justify-content: space-between;
 	
-	padding: $density-wide;
+	padding: var(--density-wide);
 	
 	&__logo {
 		&__link {
