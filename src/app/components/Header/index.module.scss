@@ -9,6 +9,8 @@
     
     padding: var(--density-wide);
     
+    box-shadow: $shadow-less-subtle;
+    
     * {
         color: var(--color);
     }
@@ -22,14 +24,13 @@
             background: currentColor;
             
             position: absolute;
-            left: 0;
+            bottom: 0;
             
             display: block;
             
-            width: 0;
             height: $dimension-header-outline;
             
-            transition: width $animation-duration ease-in-out;
+            animation: slide-out $animation-duration ease-in-out forwards;
         }
         
         &__link {
@@ -39,7 +40,7 @@
         
         &:hover {
             &::after {
-                width: 100%;
+                animation: slide-in $animation-duration ease-in-out forwards;
             }
         }
     }
@@ -62,5 +63,27 @@
         --color: #{map-get($color-dark, text)};
         
         background: $color-primary-dark;
+    }
+}
+
+@keyframes slide-in {
+    from {
+        left: 0;
+        right: 100%;
+    }
+    to {
+        left: 0;
+        right: 0;
+    }
+}
+
+@keyframes slide-out {
+    from {
+        left: 0;
+        right: 0;
+    }
+    to {
+        left: 100%;
+        right: 0;
     }
 }

@@ -7,16 +7,14 @@ import styles from './index.module.scss';
 
 const Header = ({isInHome}) => {
     return (
-        <header
-            className={`${styles['header']} ${!isInHome ? styles['header--colorful'] : ''}`}>
+        <header className={`${styles['header']} ${!isInHome ? styles['header--colorful'] : ''}`}>
             <div className={styles['header__logo']}>
                 <Link className={styles['header__logo__link']} to="/">CSS
                     Animations</Link>
             </div>
             
             <div className={styles['header__github']}>
-                <a href="https://github.com/BijanProgrammer/css-animations"
-                   target="_blank" rel="noreferrer" title="GitHub Page">
+                <a href="https://github.com/BijanProgrammer/css-animations" target="_blank" rel="noreferrer" title="GitHub Page">
                     <GitHubIcon className={styles['header__github__icon']}/>
                 </a>
             </div>

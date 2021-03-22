@@ -26,8 +26,7 @@ function App() {
                     <Switch>
                         {
                             routes.forEach(route => (
-                                <Route path={route.path} exact={route.exact}
-                                       component={route.component}/>
+                                <Route path={route.path} exact={route.exact} component={route.component}/>
                             ))
                         }
                         

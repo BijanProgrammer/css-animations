@@ -1,7 +1,5 @@
 import React from 'react';
-import {Link, Route, Switch} from 'react-router-dom';
-
-import NotFound from '../NotFound';
+import {Link, NavLink, Redirect, Route, Switch} from 'react-router-dom';
 
 import animationRoutes from './animations';
 
@@ -17,10 +15,9 @@ const Gallery = ({match}) => {
                     {
                         animationRoutes.map(route => (
                             <li key={route.key}>
-                                <Link className={styles['header__logo__link']}
-                                      to={`${match.path}/${route.key}`}>
+                                <NavLink activeClassName={styles['--active']} to={`${match.path}/${route.key}`}>
                                     {toTitleCase(route.key)}
-                                </Link>
+                                </NavLink>
                             </li>
                         ))
                     }
@@ -31,20 +28,17 @@ const Gallery = ({match}) => {
                 <Switch>
                     {
                         animationRoutes.map(route => (
-                            <Route key={route.key}
-                                   path={`${match.path}/${route.key}`}>
+                            <Route key={route.key} path={`${match.path}/${route.key}`}>
                                 <h2 className={styles['gallery__title']}>
-                                    Gallery |
-                                    <span
-                                        className={styles['gallery__title__key']}>{route.key}</span>
+                                    <Link className={styles['gallery__title__link']} to={match.path}>Gallery</Link> |
+                                    <span className={styles['gallery__title__key']}>{route.key}</span>
                                     Animations
                                 </h2>
                                 
                                 <ol className={styles['gallery__table']}>
                                     {
                                         route.animations.map((animation, i) => (
-                                            <li key={i}
-                                                className={styles['gallery__table__cell']}>
+                                            <li key={i} className={styles['gallery__table__cell']}>
                                                 {animation}
                                             </li>
                                         ))
@@ -54,11 +48,15 @@ const Gallery = ({match}) => {
                         ))
                     }
                     
-                    <Route exact path={`${match.path}/`}>
-                        Welcome to Gallery!
+                    <Route exact path={match.path}>
+                        <h2 className={styles['gallery__title']}>
+                            Welcome to <span className={styles['gallery__title__key']}>Gallery</span>!
+                        </h2>
                     </Route>
                     
-                    <Route component={NotFound}/>
+                    <Route>
+                        <Redirect to={match.path}/>
+                    </Route>
                 </Switch>
             </div>
         </div>

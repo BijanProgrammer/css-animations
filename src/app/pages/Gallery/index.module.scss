@@ -7,21 +7,61 @@
     justify-content: stretch;
     
     .sidebar {
-        //background: map-get($color-low-priority, background);
-        
         min-width: 20rem;
         
-        padding: var(--density-wide);
-        
-        box-shadow: $shadow-less-subtle;
+        box-shadow: inset $shadow-less-subtle;
         
         ul {
             list-style: none;
             
             li {
                 a {
+                    position: relative;
+                    overflow: hidden;
+                    z-index: 1;
+                    
+                    display: block;
+                    
+                    padding: var(--density-wide);
+                    
                     font-size: $font-size-normal;
                     font-weight: $font-weight-regular;
+                    
+                    transition: color $animation-duration ease-in-out;
+                    
+                    &::after {
+                        content: "";
+                        
+                        background: $color-primary-dark;
+                        
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        z-index: -1;
+                        
+                        display: block;
+                        
+                        animation: slide-out $animation-duration ease-in-out forwards;
+                    }
+                    
+                    &:hover {
+                        color: map-get($color-dark, text);
+                        
+                        &::after {
+                            animation: slide-in $animation-duration ease-in-out forwards;
+                        }
+                    }
+                    
+                    &.--active {
+                        background: $color-accent-dark;
+                        color: map-get($color-dark, text);
+                        
+                        &::after {
+                            background: $color-accent-light;
+                        }
+                    }
                 }
             }
         }
@@ -42,6 +82,20 @@
         
         max-width: $max-width;
         
+        margin: 0 auto;
+        
+        &__home {
+            flex: 1;
+            
+            display: grid;
+            place-items: flex-start;
+            
+            padding: var(--density-wide);
+            
+            font-size: $font-size-larger;
+            font-weight: $font-weight-regular;
+        }
+        
         &__title {
             color: map-get($color-low-priority, text);
             
@@ -49,6 +103,14 @@
             
             font-size: $font-size-larger;
             font-weight: $font-weight-medium;
+            
+            &__link {
+                transition: color $animation-duration ease-in-out;
+                
+                &:hover {
+                    color: $color-primary-dark;
+                }
+            }
             
             &__key {
                 color: map-get($color-light, text);
@@ -100,4 +162,22 @@
         }
     }
     
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes slide-out {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(100%);
+    }
 }
