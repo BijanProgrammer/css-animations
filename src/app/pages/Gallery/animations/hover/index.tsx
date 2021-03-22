@@ -3,11 +3,11 @@ import FillFromOneSide from './FillFromOneSide';
 import Fill from './Fill';
 
 const wrapper = {
-	animations: [
-		<Expand/>,
-		<Fill/>,
-		<FillFromOneSide/>
-	]
+    animations: [
+        <Expand/>,
+        <Fill/>,
+        <FillFromOneSide/>
+    ]
 };
 
 export default wrapper;

@@ -4,8 +4,8 @@ import Button from '../../../../../components/Button';
 
 import styles from './index.module.scss';
 
-const Expand = () => {
-	return <Button className={styles['button']} name={Expand.name}/>;
+const Expand = ({title = 'Expand'}) => {
+    return <Button className={styles['button']} name={title}/>;
 };
 
 export default Expand;

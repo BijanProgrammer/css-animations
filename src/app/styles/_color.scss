@@ -23,28 +23,28 @@ $color-gray-05: #0c0c0c;
 $color-black: #000000;
 
 $color-light: (
-	background: $color-gray-98,
-	text: $color-gray-10
+    background: $color-gray-98,
+    text: $color-gray-10
 );
 
 $color-dark: (
-	background: $color-gray-10,
-	text: $color-gray-98
+    background: $color-gray-10,
+    text: $color-gray-98
 );
 
 $color-low-priority: (
-	background: $color-gray-90,
-	text: $color-gray-40
+    background: $color-gray-90,
+    text: $color-gray-40
 );
 
 $color-button-idle: (
-	background: $color-primary-dark,
-	text: $color-gray-98
+    background: $color-primary-dark,
+    text: $color-gray-98
 );
 
 $color-button-hover: (
-	background: $color-primary-light,
-	text: $color-gray-98
+    background: $color-primary-light,
+    text: $color-gray-98
 );
 
 // not used yet >>>
@@ -75,47 +75,48 @@ $shade-light-gray-10: transparentize($color-gray-95, 0.1);
 
 /************** GRADIENTS *************/
 $linear-gradient-100-50-100: linear-gradient(
-		0deg,
-		$color-gray-10,
-		$shade-dark-gray-50,
-		$color-gray-10
+        0deg,
+        $color-gray-10,
+        $shade-dark-gray-50,
+        $color-gray-10
 );
 
 /************** SHADOWS ***************/
 $shadow-subtle: 0 0 0.2rem $shade-dark-gray-90;
-$shadow-subtle-filter: drop-shadow(0 0 0.2rem $shade-dark-gray-90);
+$shadow-subtle-filter: drop-shadow($shadow-subtle);
 
-$shadow-less-subtle-filter: drop-shadow(0 0.2rem 0.2rem $shade-dark-gray-70);
+$shadow-less-subtle: 0 0 0.7rem 0.2rem $shade-dark-gray-90;
+$shadow-less-subtle-filter: drop-shadow($shadow-less-subtle);
 
 /*********** UTILITY CLASSES **********/
 .primary-text {
-	color: $color-primary-dark;
+    color: $color-primary-dark;
 }
 
 .accent-text {
-	color: $color-accent-dark;
+    color: $color-accent-dark;
 }
 
 .success-text {
-	color: $color-success-dark;
+    color: $color-success-dark;
 }
 
 .danger-text {
-	color: $color-danger-dark;
+    color: $color-danger-dark;
 }
 
 .primary-background {
-	background: $color-primary-dark;
+    background: $color-primary-dark;
 }
 
 .accent-background {
-	background: $color-accent-dark;
+    background: $color-accent-dark;
 }
 
 .success-background {
-	background: $color-success-dark;
+    background: $color-success-dark;
 }
 
 .danger-background {
-	background: $color-danger-dark;
+    background: $color-danger-dark;
 }
