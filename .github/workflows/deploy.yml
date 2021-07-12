@@ -16,7 +16,8 @@ jobs:
           key: ${{secrets.SSH_KEY}}
           port: 22
           script: |
-            cd /repos/website
+            cd /repos/css-animations
+            git fetch
             git checkout production
             git pull origin production
             npm i
