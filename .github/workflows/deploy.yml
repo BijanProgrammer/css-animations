@@ -21,5 +21,5 @@ jobs:
             git checkout production
             git pull origin production
             npm i
-            ng build
-            cp -a dist/website/. /var/projects/bijanprogrammer.com/html/css-animations/
+            npm run build
+            cp -a build/. /var/projects/bijanprogrammer.com/html/css-animations/
