@@ -3,7 +3,7 @@
 .button {
     transform: scale(1);
     
-    transition: all $animation-duration ease-in-out;
+    transition: all $animation-duration--fast ease-in-out;
     
     &:hover {
         @include extract-color($color-button-hover);

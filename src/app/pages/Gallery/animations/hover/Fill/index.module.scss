@@ -8,7 +8,7 @@
     
     border: $dimension-button-outline solid $color;
     
-    transition: all $animation-duration ease-in-out;
+    transition: all $animation-duration--fast ease-in-out;
     
     &:hover {
         background: map-get($color-button-hover, background);

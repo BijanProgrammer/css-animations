@@ -12,11 +12,13 @@
     border: $dimension-button-outline solid $color;
     
     &,
-    &::before {
+    &::before,
+    &::after {
         transition: all $animation-duration--fast ease-in-out;
     }
     
-    &::before {
+    &::before,
+    &::after {
         content: "";
         
         background: map-get($color-button-hover, background);
@@ -27,8 +29,14 @@
         right: 0;
         bottom: 0;
         z-index: -1;
-        
+    }
+    
+    &::before {
         transform: translateX(-100%);
+    }
+    
+    &::after {
+        transform: translateX(100%);
     }
     
     &:hover {
@@ -38,7 +46,8 @@
         
         border-color: map-get($color-button-hover, background);
         
-        &::before {
+        &::before,
+        &::after {
             background: map-get($color-button-hover, background);
             
             transform: translateX(0%);

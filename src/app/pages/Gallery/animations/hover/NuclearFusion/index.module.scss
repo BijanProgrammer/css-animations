@@ -1,0 +1,72 @@
+@use "src/app/styles" as *;
+
+.button {
+    $color: map-get($color-button-idle, background);
+    
+    background: transparent;
+    color: $color;
+    
+    position: relative;
+    overflow: hidden;
+    
+    border: $dimension-button-outline solid $color;
+    
+    &,
+    &::before,
+    &::after {
+        transition: all $animation-duration--normal ease-in-out;
+    }
+    
+    &::before,
+    &::after {
+        content: "";
+        
+        background: map-get($color-button-hover, background);
+        
+        position: absolute;
+        top: 50%;
+        z-index: -1;
+        
+        clip-path: circle(50% at 50% 50%);
+        
+        height: 80%;
+        aspect-ratio: 1 / 1;
+    }
+    
+    &::before {
+        left: 0;
+        transform: translate(-100%, -50%);
+    }
+    
+    &::after {
+        left: 100%;
+        transform: translate(0%, -50%);
+    }
+    
+    &:hover {
+        color: map-get($color-button-hover, text);
+        
+        z-index: 1;
+        
+        border-color: map-get($color-button-hover, background);
+        
+        &::before,
+        &::after {
+            background: map-get($color-button-hover, background);
+            
+            animation: hover-animation $animation-duration--normal ease-in-out forwards;
+        }
+    }
+}
+
+@keyframes hover-animation {
+    50% {
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    100% {
+        left: 50%;
+        transform: translate(-50%, -50%) scale(10);
+    }
+}

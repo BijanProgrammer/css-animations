@@ -30,7 +30,7 @@
             
             height: $dimension-header-outline;
             
-            animation: slide-out $animation-duration ease-in-out forwards;
+            animation: slide-out $animation-duration--fast ease-in-out forwards;
         }
         
         &__link {
@@ -40,7 +40,7 @@
         
         &:hover {
             &::after {
-                animation: slide-in $animation-duration ease-in-out forwards;
+                animation: slide-in $animation-duration--fast ease-in-out forwards;
             }
         }
     }
@@ -48,7 +48,7 @@
     &__github {
         transform: scale(1);
         
-        transition: transform $animation-duration ease-in-out;
+        transition: transform $animation-duration--fast ease-in-out;
         
         &__icon {
             font-size: $font-size-larger !important;
