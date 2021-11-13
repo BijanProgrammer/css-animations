@@ -1,4 +1,4 @@
 export default interface IAnimationRoute {
-    key: string,
-    animations: JSX.Element[]
-};
+    key: string;
+    animations: JSX.Element[];
+}

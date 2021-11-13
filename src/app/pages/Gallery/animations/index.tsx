@@ -4,12 +4,12 @@ import hover from './hover';
 const animationRoutes: IAnimationRoute[] = [
     {
         key: 'hover',
-        animations: hover.animations
+        animations: hover.animations,
     },
     {
         key: 'coming soon!',
-        animations: []
-    }
+        animations: [],
+    },
 ];
 
 export default animationRoutes;

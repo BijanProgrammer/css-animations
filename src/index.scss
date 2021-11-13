@@ -8,17 +8,17 @@
 *::before,
 *::after {
     background: none;
-    
+
     box-sizing: border-box;
-    
+
     margin: 0;
     padding: 0;
-    
+
     border: none;
     outline: none;
-    
-    font-family: "Roboto", sans-serif;
-    
+
+    font-family: 'Roboto', sans-serif;
+
     text-decoration: none;
 }
 
@@ -37,25 +37,25 @@
 
 *::-webkit-scrollbar-thumb {
     background: $color-gray-75;
-    
+
     border: none;
     border-radius: 1rem;
 }
 
 html {
     height: 100%;
-    
+
     font-size: 62.5%;
     font-weight: 300;
 }
 
 body {
     @include extract-color($color-light);
-    
+
     display: flex;
-    
+
     min-height: 100%;
-    
+
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -70,13 +70,13 @@ a {
 
 button {
     @include extract-color($color-button-idle);
-    
+
     min-width: 15rem;
-    
+
     padding: var(--density-normal) var(--density-wide);
-    
+
     border-radius: 999rem;
-    
+
     cursor: pointer;
 }
 
@@ -84,7 +84,7 @@ input,
 textarea {
     background: $color-input-background;
     color: $color-input-text;
-    
+
     &::placeholder {
         color: $color-input-placeholder;
     }

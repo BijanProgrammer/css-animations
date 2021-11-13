@@ -2,66 +2,66 @@
 
 .header {
     --color: #{map-get($color-light, text)};
-    
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
+
     padding: var(--density-wide);
-    
+
     box-shadow: $shadow-less-subtle;
-    
+
     * {
         color: var(--color);
     }
-    
+
     &__logo {
         position: relative;
-        
+
         &::after {
-            content: "";
-            
+            content: '';
+
             background: currentColor;
-            
+
             position: absolute;
             bottom: 0;
-            
+
             display: block;
-            
+
             height: $dimension-header-outline;
-            
+
             animation: slide-out $animation-duration--fast ease-in-out forwards;
         }
-        
+
         &__link {
             font-size: $font-size-larger;
             font-weight: $font-weight-bold;
         }
-        
+
         &:hover {
             &::after {
                 animation: slide-in $animation-duration--fast ease-in-out forwards;
             }
         }
     }
-    
+
     &__github {
         transform: scale(1);
-        
+
         transition: transform $animation-duration--fast ease-in-out;
-        
+
         &__icon {
             font-size: $font-size-larger !important;
         }
-        
+
         &:hover {
             transform: scale(1.2);
         }
     }
-    
+
     &--colorful {
         --color: #{map-get($color-dark, text)};
-        
+
         background: $color-primary-dark;
     }
 }

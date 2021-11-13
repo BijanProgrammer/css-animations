@@ -3,13 +3,13 @@
 
 /************** VARIABLES *************/
 $media-query-breakpoints: (
-    large: 600px
+    large: 600px,
 );
 
 /************* RESPONSIVE *************/
 @mixin media-query($key) {
     $size: map-get($media-query-breakpoints, $key);
-    
+
     @media only screen and (min-width: $size) {
         @content;
     }
@@ -53,7 +53,7 @@ $media-query-breakpoints: (
 /************* TRANSITIONS ************/
 @mixin grow-on-hover($scale: 1.1, $duration: 0.1s) {
     transition: transform $duration ease-in-out;
-    
+
     &:hover {
         transform: scale($scale, $scale);
     }

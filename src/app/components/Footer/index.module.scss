@@ -2,11 +2,11 @@
 
 .footer {
     @include extract-color($color-dark);
-    
+
     font-size: $font-size-small;
     font-weight: $font-weight-light;
-    
+
     padding: var(--density-wide);
-    
+
     text-align: center;
 }

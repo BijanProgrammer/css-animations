@@ -10,7 +10,7 @@ const Home = () => {
         <div className={styles['home']}>
             <h2>Hello, friend!</h2>
             <Link className={styles['header__logo__link']} to="/gallery">
-                <Fill title="View Gallery"/>
+                <Fill title="View Gallery" />
             </Link>
         </div>
     );

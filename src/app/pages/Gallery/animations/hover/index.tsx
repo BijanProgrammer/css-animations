@@ -7,13 +7,7 @@ import NuclearFusion from './NuclearFusion';
 import FillFromOppositeSides from './FillFromOppositeSides';
 
 const wrapper = {
-    animations: [
-        <Expand/>,
-        <Fill/>,
-        <FillFromOneSide/>,
-        <FillFromOppositeSides/>,
-        <NuclearFusion/>
-    ]
+    animations: [<Expand />, <Fill />, <FillFromOneSide />, <FillFromOppositeSides />, <NuclearFusion />],
 };
 
 export default wrapper;

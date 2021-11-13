@@ -24,27 +24,27 @@ $color-black: #000000;
 
 $color-light: (
     background: $color-gray-98,
-    text: $color-gray-10
+    text: $color-gray-10,
 );
 
 $color-dark: (
     background: $color-gray-10,
-    text: $color-gray-98
+    text: $color-gray-98,
 );
 
 $color-low-priority: (
     background: $color-gray-90,
-    text: $color-gray-40
+    text: $color-gray-40,
 );
 
 $color-button-idle: (
     background: $color-primary-dark,
-    text: $color-gray-98
+    text: $color-gray-98,
 );
 
 $color-button-hover: (
     background: $color-primary-light,
-    text: $color-gray-98
+    text: $color-gray-98,
 );
 
 // not used yet >>>
@@ -74,12 +74,7 @@ $shade-light-gray-30: transparentize($color-gray-95, 0.3);
 $shade-light-gray-10: transparentize($color-gray-95, 0.1);
 
 /************** GRADIENTS *************/
-$linear-gradient-100-50-100: linear-gradient(
-        0deg,
-        $color-gray-10,
-        $shade-dark-gray-50,
-        $color-gray-10
-);
+$linear-gradient-100-50-100: linear-gradient(0deg, $color-gray-10, $shade-dark-gray-50, $color-gray-10);
 
 /************** SHADOWS ***************/
 $shadow-subtle: 0 0 0.2rem $shade-dark-gray-90;
