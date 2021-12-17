@@ -5,7 +5,7 @@ import animationRoutes from './animations';
 
 import styles from './index.module.scss';
 
-import {toTitleCase} from '../../utils/string-manipulation';
+import {pascalCaseToTitleCase, wordsToTitleCase} from '../../utils/string.utils';
 
 const Gallery = ({match}) => {
     return (
@@ -15,7 +15,7 @@ const Gallery = ({match}) => {
                     {animationRoutes.map((route) => (
                         <li key={route.key}>
                             <NavLink activeClassName={styles['--active']} to={`${match.path}/${route.key}`}>
-                                {toTitleCase(route.key)}
+                                {wordsToTitleCase(route.key)}
                             </NavLink>
                         </li>
                     ))}
@@ -37,7 +37,10 @@ const Gallery = ({match}) => {
                             <ol className={styles['gallery__table']}>
                                 {route.animations.map((animation, i) => (
                                     <li key={i} className={styles['gallery__table__cell']}>
-                                        {animation}
+                                        <span className={styles['gallery__table__cell__title']}>
+                                            {pascalCaseToTitleCase(animation.title)}
+                                        </span>
+                                        {animation.element}
                                     </li>
                                 ))}
                             </ol>

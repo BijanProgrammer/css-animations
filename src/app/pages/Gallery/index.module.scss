@@ -139,24 +139,27 @@
             counter-reset: animation-counter;
 
             &__cell {
-                position: relative;
-
-                display: grid;
-                place-items: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: var(--density-normal);
 
                 counter-increment: animation-counter;
 
-                &::before {
-                    content: counter(animation-counter, decimal-leading-zero);
+                &__title {
+                    align-self: flex-start;
 
                     color: map-get($color-low-priority, text);
 
-                    position: absolute;
-                    top: $index-indent;
-                    left: $index-indent;
-
                     font-size: $font-size-small;
                     font-weight: $font-weight-bold;
+
+                    &::before {
+                        content: counter(animation-counter, decimal-leading-zero) '. ';
+
+                        font-size: $font-size-smaller;
+                        font-weight: $font-weight-bold;
+                    }
                 }
             }
         }

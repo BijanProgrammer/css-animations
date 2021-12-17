@@ -1,10 +1,15 @@
-import IAnimationRoute from '../../../models/IAnimationRoute';
-import hover from './hover';
+import {CssAnimationRoute} from '../../../models/css-animation-route';
+import {animations as hoverAnimations} from './hover';
+import {animations as loadingAnimations} from './loading';
 
-const animationRoutes: IAnimationRoute[] = [
+const animationRoutes: CssAnimationRoute[] = [
     {
         key: 'hover',
-        animations: hover.animations,
+        animations: hoverAnimations,
+    },
+    {
+        key: 'loading',
+        animations: loadingAnimations,
     },
     {
         key: 'coming soon!',

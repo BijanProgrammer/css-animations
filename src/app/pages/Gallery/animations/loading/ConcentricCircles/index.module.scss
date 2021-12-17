@@ -1,0 +1,35 @@
+@use "src/app/styles" as *;
+
+.wrapper {
+    .circle {
+        --size: 1rem;
+        --border-width: 0.8rem;
+
+        color: $color-primary-dark;
+
+        border-width: var(--border-width);
+        border-style: solid;
+        border-color: currentColor transparent transparent currentColor;
+        border-radius: 999rem;
+
+        animation: loading-animation 7s linear infinite;
+    }
+}
+
+@keyframes loading-animation {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.button {
+    transform: scale(1);
+
+    transition: all $animation-duration--fast ease-in-out;
+
+    &:hover {
+        @include extract-color($color-button-hover);
+
+        transform: scale(1.1);
+    }
+}
