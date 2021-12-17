@@ -1,0 +1,23 @@
+.wrapper {
+    ::ng-deep {
+        .circle {
+            --size: 1rem;
+            --border-width: 0.8rem;
+
+            color: var(--color--primary);
+
+            border-width: var(--border-width);
+            border-style: solid;
+            border-color: currentColor transparent transparent currentColor;
+            border-radius: 999rem;
+
+            animation: loading-animation 7s linear infinite;
+        }
+    }
+}
+
+@keyframes loading-animation {
+    to {
+        transform: rotate(360deg);
+    }
+}

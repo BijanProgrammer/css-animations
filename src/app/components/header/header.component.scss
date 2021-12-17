@@ -1,0 +1,84 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 4rem;
+
+    box-shadow: var(--box-shadow--subtle);
+
+    * {
+        color: var(--color);
+    }
+
+    &__logo {
+        position: relative;
+
+        &::after {
+            content: '';
+
+            background: currentColor;
+
+            position: absolute;
+            bottom: 0;
+
+            display: block;
+
+            height: 0.2rem;
+
+            animation: slide-out 0.2s ease-in-out forwards;
+        }
+
+        &__link {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        &:hover {
+            &::after {
+                animation: slide-in 0.2s ease-in-out forwards;
+            }
+        }
+    }
+
+    &__github {
+        transform: scale(1);
+
+        transition: transform 0.2s ease-in-out;
+
+        &__icon {
+            font-size: 1.8rem !important;
+        }
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+
+    &--colorful {
+        background-color: var(--color--primary);
+        color: var(--color--primary-opposite);
+    }
+}
+
+@keyframes slide-in {
+    from {
+        left: 0;
+        right: 100%;
+    }
+    to {
+        left: 0;
+        right: 0;
+    }
+}
+
+@keyframes slide-out {
+    from {
+        left: 0;
+        right: 0;
+    }
+    to {
+        left: 100%;
+        right: 0;
+    }
+}

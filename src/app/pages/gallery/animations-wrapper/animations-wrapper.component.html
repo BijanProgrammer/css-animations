@@ -1,0 +1,13 @@
+<h2 class="gallery__title">
+    <a class="gallery__title__link" routerLink="/gallery">Gallery</a>
+    |
+    <span class="gallery__title__key">{{ title }}</span>
+    Animations
+</h2>
+
+<ol class="gallery__table">
+    <li class="gallery__table__cell" *ngFor="let animation of animations">
+        <span class="gallery__table__cell__title">{{ animation.title }}</span>
+        <ng-template appAnimation></ng-template>
+    </li>
+</ol>
