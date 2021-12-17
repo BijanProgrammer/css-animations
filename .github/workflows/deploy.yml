@@ -22,6 +22,6 @@ jobs:
                       git reset --hard HEAD
                       git pull origin production
                       npm i
-                      npm run build
-                        rm -rf /var/ta/bijanprogrammer.com/html/data-structures
-                      cp -a build/. /var/projects/bijanprogrammer.com/html/css-animations/
+                      ng build --base-href=/css-animations/
+                      rm -rf /var/projects/bijanprogrammer.com/html/css-animations
+                      cp -a dist/css-animations/. /var/projects/bijanprogrammer.com/html/css-animations

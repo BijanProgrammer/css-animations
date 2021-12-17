@@ -1,9 +1,0 @@
-@use "src/app/styles" as *;
-
-.not-found {
-    display: grid;
-    place-items: center;
-
-    font-size: $font-size-larger;
-    font-weight: $font-weight-regular;
-}
