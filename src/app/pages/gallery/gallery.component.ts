@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {Category} from '../../models/category';
 import {NavigationEnd, Router} from '@angular/router';
 import {ConcentricCirclesComponent} from '../../animations/loading/concentric-circles/concentric-circles.component';
+import {PlayfulRopeComponent} from '../../animations/loading/playful-rope/playful-rope.component';
 
 @Component({
     selector: 'app-gallery',
@@ -16,7 +17,7 @@ export class GalleryComponent {
         },
         {
             title: 'loading',
-            animations: [ConcentricCirclesComponent],
+            animations: [ConcentricCirclesComponent, PlayfulRopeComponent],
         },
     ];
 

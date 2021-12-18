@@ -19,7 +19,7 @@
 
         border-radius: 999rem;
 
-        transition: all 0.2s ease-in-out;
+        transition: all var(--animation--duration--fast) ease-in-out;
 
         &:hover {
             background-color: var(--color--primary-fade);

@@ -8,7 +8,6 @@ const routes: Routes = [
     {path: '', pathMatch: 'full', component: HomeComponent},
     {
         path: 'gallery',
-        component: GalleryComponent,
         children: [{path: '**', component: GalleryComponent}],
     },
     {path: '', component: NotFoundComponent},

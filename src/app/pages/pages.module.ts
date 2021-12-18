@@ -7,9 +7,10 @@ import {RouterModule} from '@angular/router';
 import {AnimationsWrapperComponent} from './gallery/animations-wrapper/animations-wrapper.component';
 import {LoadingModule} from '../animations/loading/loading.module';
 import {DirectivesModule} from '../directives/directives.module';
+import {PipesModule} from '../pipes/pipes.module';
 
 @NgModule({
     declarations: [HomeComponent, GalleryComponent, NotFoundComponent, AnimationsWrapperComponent],
-    imports: [CommonModule, RouterModule, LoadingModule, DirectivesModule],
+    imports: [CommonModule, RouterModule, LoadingModule, DirectivesModule, PipesModule],
 })
 export class PagesModule {}

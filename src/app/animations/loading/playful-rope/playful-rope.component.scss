@@ -1,4 +1,9 @@
-.concentric-circles {
+.playful-rope {
+    display: grid;
+    place-items: center;
+
+    height: calc(var(--count, 4) * 1.2em);
+
     ::ng-deep {
         .circle {
             --size: 1rem;
@@ -6,20 +11,17 @@
 
             color: var(--color--primary);
 
-            display: inline-block;
-
             border-width: var(--border-width);
             border-style: solid;
             border-color: currentColor transparent transparent currentColor;
             border-radius: 999rem;
 
-            animation: concentric-circles-loading-animation calc(var(--count, 4) * var(--animation--duration--normal))
-                linear infinite;
+            animation: loading-animation calc(var(--count, 4) * var(--animation--duration--normal)) linear infinite;
         }
     }
 }
 
-@keyframes concentric-circles-loading-animation {
+@keyframes loading-animation {
     to {
         transform: rotate(360deg);
     }

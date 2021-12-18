@@ -1,0 +1,47 @@
+:host {
+    display: contents;
+
+    .gallery {
+        &__table {
+            --cell-width: 30rem;
+            --cell-height: 15rem;
+            --gap: 5rem;
+
+            display: grid;
+            grid-auto-rows: auto;
+            grid-template-columns: repeat(auto-fill, var(--cell-width));
+            gap: var(--gap);
+            justify-content: center;
+
+            width: 100%;
+
+            list-style: none;
+            counter-reset: animation-counter;
+
+            &__cell {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: inherit;
+
+                counter-increment: animation-counter;
+
+                &__title {
+                    align-self: flex-start;
+
+                    color: var(--color--placeholder);
+
+                    font-size: 1.6rem;
+                    font-weight: 700;
+
+                    &::before {
+                        content: counter(animation-counter, decimal-leading-zero) '. ';
+
+                        font-size: 1.2rem;
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+    }
+}

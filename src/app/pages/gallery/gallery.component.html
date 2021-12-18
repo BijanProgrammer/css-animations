@@ -1,25 +1,21 @@
-<div class="host">
-    <nav class="sidebar">
-        <ul>
-            <li *ngFor="let category of CATEGORIES">
-                <a routerLinkActive="--active" [routerLink]="['/gallery', category.title]">{{ category.title }}</a>
-            </li>
-        </ul>
-    </nav>
+<nav class="sidebar">
+    <ul>
+        <li *ngFor="let category of CATEGORIES">
+            <a routerLinkActive="--active" [routerLink]="['/gallery', category.title]">{{ category.title }}</a>
+        </li>
+    </ul>
+</nav>
 
-    <div class="gallery">
-        <ng-container *ngIf="currentRoute.length === 1">
-            <h2 class="gallery__title">Welcome to <span class="gallery__title__key">Gallery</span>!</h2>
-        </ng-container>
+<div class="gallery">
+    <ng-container *ngIf="currentRoute.length === 1">
+        <h2 class="gallery__title">Welcome to <span class="gallery__title__key">Gallery</span>!</h2>
+    </ng-container>
 
-        <ng-container *ngFor="let category of CATEGORIES">
-            <app-animations-wrapper
-                *ngIf="currentRoute[1] === category.title"
-                [title]="category.title"
-                [animations]="category.animations"
-            >
-                <animation-concentric-circles></animation-concentric-circles>
-            </app-animations-wrapper>
-        </ng-container>
-    </div>
+    <ng-container *ngFor="let category of CATEGORIES">
+        <app-animations-wrapper
+            *ngIf="currentRoute[1] === category.title"
+            [title]="category.title"
+            [animations]="category.animations"
+        ></app-animations-wrapper>
+    </ng-container>
 </div>

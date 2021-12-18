@@ -1,13 +1,13 @@
-.host {
+:host {
     display: flex;
     flex-direction: row;
     align-items: stretch;
     justify-content: stretch;
 
+    min-height: 100%;
+
     .sidebar {
         min-width: 20rem;
-
-        box-shadow: inset var(--box-shadow--subtle);
 
         ul {
             list-style: none;
@@ -15,21 +15,21 @@
             li {
                 a {
                     position: relative;
-                    overflow: hidden;
                     z-index: 1;
+                    overflow: hidden;
 
                     display: block;
 
-                    padding: 4rem;
+                    padding: 1rem;
 
-                    font-size: 1.4rem;
+                    font-size: 1.6rem;
 
-                    transition: color 0.2s ease-in-out;
+                    transition: color var(--animation--duration--fast) ease-in-out;
 
                     &::after {
                         content: '';
 
-                        background: var(--color--primary);
+                        background-color: var(--color--primary);
 
                         position: absolute;
                         top: 0;
@@ -40,12 +40,14 @@
 
                         display: block;
 
-                        animation: slide-out 0.2s ease-in-out forwards;
+                        animation: slide-out var(--animation--duration--fast) ease-in-out forwards;
                     }
 
                     &:hover {
+                        color: var(--color--primary-opposite);
+
                         &::after {
-                            animation: slide-in 0.2s ease-in-out forwards;
+                            animation: slide-in var(--animation--duration--fast) ease-in-out forwards;
                         }
                     }
 
@@ -62,94 +64,52 @@
         }
     }
 
-    .gallery {
-        $max-width: 120rem;
-        $cell-width: 30rem;
-        $cell-height: 15rem;
-        $row-gap: 5rem;
-        $index-indent: 1rem;
-
-        flex: 1;
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        max-width: $max-width;
-
-        margin: 0 auto;
-
-        &__home {
+    ::ng-deep {
+        .gallery {
             flex: 1;
 
-            display: grid;
-            place-items: flex-start;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4rem;
 
-            padding: 4rem;
+            margin: 0 auto;
+            padding: 2rem;
 
-            font-size: 1.8rem;
-        }
+            &__home {
+                flex: 1;
 
-        &__title {
-            color: var(--color--placeholder);
+                display: grid;
+                place-items: flex-start;
 
-            margin: 2rem auto;
+                padding: 4rem;
 
-            font-size: 1.8rem;
-
-            &__link {
-                transition: color 0.2s ease-in-out;
-
-                &:hover {
-                    color: var(--color--primary);
-                }
+                font-size: 1.8rem;
             }
 
-            &__key {
-                font-size: 1.8rem + 0.4rem;
-                font-weight: 700;
-                text-transform: capitalize;
+            &__title {
+                color: var(--color--placeholder);
 
-                &::before,
-                &::after {
-                    content: ' ';
+                font-size: 2.4rem;
+
+                &__link {
+                    transition: color var(--animation--duration--fast) ease-in-out;
+
+                    &:hover {
+                        color: var(--color--primary);
+                    }
                 }
-            }
-        }
 
-        &__table {
-            display: grid;
-            grid-auto-rows: $cell-height;
-            grid-template-columns: repeat(auto-fill, $cell-width);
-            row-gap: $row-gap;
-            justify-content: center;
+                &__key {
+                    color: var(--color--default-foreground);
 
-            width: 100%;
-
-            list-style: none;
-            counter-reset: animation-counter;
-
-            &__cell {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: var(--density-normal);
-
-                counter-increment: animation-counter;
-
-                &__title {
-                    align-self: flex-start;
-
-                    color: var(--color--placeholder);
-
-                    font-size: 1.2rem;
+                    font-size: 2.8rem;
                     font-weight: 700;
+                    text-transform: capitalize;
 
-                    &::before {
-                        content: counter(animation-counter, decimal-leading-zero) '. ';
-
-                        font-size: 1.2rem;
-                        font-weight: 700;
+                    &::before,
+                    &::after {
+                        content: ' ';
                     }
                 }
             }
