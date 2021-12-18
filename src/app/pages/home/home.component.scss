@@ -1,0 +1,33 @@
+.wrapper {
+    --gap: 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 100%;
+
+    h1 {
+        font-size: 4.8rem;
+    }
+
+    a {
+        background-color: var(--color--primary);
+        color: var(--color--primary-opposite);
+
+        padding: 1rem 2rem;
+
+        border-radius: 999rem;
+
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+            background-color: var(--color--primary-fade);
+            color: var(--color--primary);
+
+            box-sizing: content-box;
+
+            outline: 2px solid currentColor;
+        }
+    }
+}

@@ -10,7 +10,12 @@
             rel="noreferrer"
             title="GitHub Page"
         >
-            GitHub Page
+            <logo-github></logo-github>
         </a>
+    </div>
+
+    <div class="header__theme-toggle-button" (click)="themeService.toggleTheme()">
+        <icon-dark-mode *ngIf="themeService.theme === Theme.LIGHT"></icon-dark-mode>
+        <icon-light-mode *ngIf="themeService.theme === Theme.DARK"></icon-light-mode>
     </div>
 </header>
