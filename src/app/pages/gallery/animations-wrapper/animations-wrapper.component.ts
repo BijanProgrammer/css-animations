@@ -8,6 +8,7 @@ import {
     ViewChildren,
 } from '@angular/core';
 import {AnimationDirective} from '../../../directives/animation.directive';
+import {CssAnimation} from '../../../models/css-animation';
 
 @Component({
     selector: 'app-animations-wrapper',
@@ -16,7 +17,7 @@ import {AnimationDirective} from '../../../directives/animation.directive';
 })
 export class AnimationsWrapperComponent implements AfterViewInit {
     @Input() public title!: string;
-    @Input() public animations!: any[];
+    @Input() public animations!: CssAnimation[];
 
     @ViewChildren(AnimationDirective) private hosts!: QueryList<AnimationDirective>;
 
@@ -38,7 +39,7 @@ export class AnimationsWrapperComponent implements AfterViewInit {
 
             viewContainerRef.clear();
 
-            const factory = this.resolver.resolveComponentFactory(animation);
+            const factory = this.resolver.resolveComponentFactory(animation.component);
             viewContainerRef.createComponent(factory);
         });
 
