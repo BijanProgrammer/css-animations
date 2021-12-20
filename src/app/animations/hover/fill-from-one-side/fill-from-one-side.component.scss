@@ -1,0 +1,43 @@
+button {
+    background-color: var(--color--primary-fade);
+    color: var(--color--primary);
+
+    position: relative;
+    overflow: hidden;
+
+    border: 2px solid currentColor;
+
+    &,
+    &::before {
+        transition: all var(--animation--duration--fast) ease-in-out;
+    }
+
+    &::before {
+        content: '';
+
+        background-color: var(--color--primary-darker);
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+
+        transform: translateX(-100%);
+    }
+
+    &:hover {
+        color: var(--color--primary-opposite);
+
+        z-index: 1;
+
+        border-color: var(--color--primary-darker);
+
+        &::before {
+            background-color: var(--color--primary-darker);
+
+            transform: translateX(0%);
+        }
+    }
+}

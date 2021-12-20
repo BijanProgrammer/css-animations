@@ -40,23 +40,23 @@
 
                         display: block;
 
-                        animation: slide-out var(--animation--duration--fast) ease-in-out forwards;
+                        animation: app--slide-out var(--animation--duration--fast) ease-in-out forwards;
                     }
 
                     &:hover {
                         color: var(--color--primary-opposite);
 
                         &::after {
-                            animation: slide-in var(--animation--duration--fast) ease-in-out forwards;
+                            animation: app--slide-in var(--animation--duration--fast) ease-in-out forwards;
                         }
                     }
 
                     &.--active {
-                        background: var(--color--secondary);
+                        background-color: var(--color--secondary);
                         color: var(--color--secondary-opposite);
 
                         &::after {
-                            background: var(--color--secondary);
+                            background-color: var(--color--secondary);
                         }
                     }
                 }

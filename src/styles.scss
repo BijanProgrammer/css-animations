@@ -6,28 +6,41 @@
     --warning-hue: 20;
     --danger-hue: 0;
 
-    --color--default-background: hsl(0, 0%, 98%);
-    --color--default-foreground: hsl(0, 0%, 10%);
+    --color-gray-98: hsl(0, 0%, 98%);
+    --color-gray-10: hsl(0, 0%, 10%);
 
-    --color--primary: hsl(var(--primary-hue), 100%, 60%);
-    --color--primary-fade: hsl(var(--primary-hue), 100%, 94%);
-    --color--primary-opposite: var(--color--default-background);
+    --color--default-background: var(--color-gray-98);
+    --color--default-foreground: var(--color-gray-10);
+
+    --color--primary: hsl(var(--primary-hue), 100%, 56%);
+    --color--primary-fade: hsl(var(--primary-hue), 100%, 96%);
+    --color--primary-lighter: hsl(var(--primary-hue), 100%, 60%);
+    --color--primary-darker: hsl(var(--primary-hue), 100%, 52%);
+    --color--primary-opposite: var(--color-gray-98);
 
     --color--secondary: hsl(var(--secondary-hue), 50%, 50%);
     --color--secondary-fade: hsl(var(--secondary-hue), 100%, 90%);
-    --color--secondary-opposite: var(--color--default-background);
+    --color--secondary-lighter: hsl(var(--secondary-hue), 50%, 56%);
+    --color--secondary-darker: hsl(var(--secondary-hue), 50%, 44%);
+    --color--secondary-opposite: var(--color-gray-98);
 
-    --color--warning: hsl(var(--warning-hue), 100%, 40%);
+    --color--warning: hsl(var(--warning-hue), 100%, 44%);
     --color--warning-fade: hsl(var(--warning-hue), 100%, 90%);
-    --color--warning-opposite: var(--color--default-background);
+    --color--warning-lighter: hsl(var(--warning-hue), 100%, 50%);
+    --color--warning-darker: hsl(var(--warning-hue), 100%, 40%);
+    --color--warning-opposite: var(--color-gray-98);
 
     --color--success: hsl(var(--success-hue), 100%, 40%);
     --color--success-fade: hsl(var(--success-hue), 100%, 92%);
-    --color--success-opposite: var(--color--default-background);
+    --color--success-lighter: hsl(var(--success-hue), 100%, 44%);
+    --color--success-darker: hsl(var(--success-hue), 100%, 36%);
+    --color--success-opposite: var(--color-gray-98);
 
-    --color--danger: hsl(var(--danger-hue), 100%, 30%);
+    --color--danger: hsl(var(--danger-hue), 100%, 36%);
     --color--danger-fade: hsl(var(--danger-hue), 100%, 90%);
-    --color--danger-opposite: var(--color--default-background);
+    --color--danger-lighter: hsl(var(--danger-hue), 100%, 42%);
+    --color--danger-darker: hsl(var(--danger-hue), 100%, 30%);
+    --color--danger-opposite: var(--color-gray-98);
 
     --color--body-background: var(--color--default-background);
     --color--body-foreground: var(--color--default-foreground);
@@ -67,7 +80,7 @@
     --color--box-shadow--subtle: hsla(0, 0%, 10%, 12%);
     --box-shadow--subtle: 0 0.2rem 0.5rem 0 var(--color--box-shadow--subtle);
 
-    --full-width: 120rem;
+    --full-width: 160rem;
     --full-width-padding-inline: calc(max(100% - var(--full-width), 4rem) / 2);
 
     --shell--padding: 2rem;
@@ -79,8 +92,6 @@
     &.theme--dark {
         --color--default-background: hsl(0, 0%, 10%);
         --color--default-foreground: hsl(0, 0%, 90%);
-
-        --color--primary: hsl(var(--primary-hue), 100%, 70%);
 
         --color--border--fade: hsl(0, 0%, 30%);
 
@@ -100,7 +111,7 @@
 
 html {
     font-size: 62.5%;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 ul {
@@ -118,6 +129,8 @@ button {
 
     border: none;
     border-radius: 999rem;
+
+    font-weight: 500;
 
     &:not([disabled]) {
         cursor: pointer;
@@ -211,27 +224,13 @@ form {
     }
 }
 
-.button {
+button {
     display: flex;
     align-items: center;
     gap: 0.5rem;
 
-    font-weight: 700;
-
-    &--regenerate {
-        background-color: var(--color--danger-fade);
-        color: var(--color--danger);
-    }
-
-    &--download {
-        background-color: var(--color--success-fade);
-        color: var(--color--success);
-    }
-
-    &--upload {
-        background-color: var(--color--warning-fade);
-        color: var(--color--warning);
-    }
+    font-family: inherit;
+    font-weight: 500;
 }
 
 .table {
@@ -277,7 +276,7 @@ form {
 }
 
 // KEYFRAMES
-@keyframes slide-in {
+@keyframes app--slide-in {
     from {
         transform: translateX(-100%);
     }
@@ -286,11 +285,23 @@ form {
     }
 }
 
-@keyframes slide-out {
+@keyframes app--slide-out {
     from {
         transform: translateX(0%);
     }
     to {
         transform: translateX(100%);
+    }
+}
+
+@keyframes hover--nuclear-fusion {
+    50% {
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    100% {
+        left: 50%;
+        transform: translate(-50%, -50%) scale(10);
     }
 }
