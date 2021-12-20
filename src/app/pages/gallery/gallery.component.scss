@@ -7,10 +7,18 @@
     min-height: 100%;
 
     .sidebar {
-        min-width: 20rem;
+        min-width: 28rem;
+
+        padding-block: 2rem;
+
+        border-inline-end: 1px solid var(--color--separator);
 
         ul {
             list-style: none;
+
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
 
             li {
                 a {
@@ -18,9 +26,12 @@
                     z-index: 1;
                     overflow: hidden;
 
-                    display: block;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 1rem;
 
-                    padding: 1rem;
+                    margin-inline-end: 2rem;
 
                     font-size: 1.6rem;
 
@@ -29,22 +40,16 @@
                     &::after {
                         content: '';
 
-                        background-color: var(--color--primary);
+                        background-color: currentColor;
 
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        right: 0;
-                        bottom: 0;
-                        z-index: -1;
-
-                        display: block;
+                        width: 100%;
+                        height: 0.2rem;
 
                         animation: app--slide-out var(--animation--duration--fast) ease-in-out forwards;
                     }
 
                     &:hover {
-                        color: var(--color--primary-opposite);
+                        color: var(--color--primary);
 
                         &::after {
                             animation: app--slide-in var(--animation--duration--fast) ease-in-out forwards;
@@ -52,11 +57,16 @@
                     }
 
                     &.--active {
-                        background-color: var(--color--secondary);
-                        color: var(--color--secondary-opposite);
+                        color: var(--color--secondary);
 
                         &::after {
-                            background-color: var(--color--secondary);
+                            animation: none;
+                        }
+
+                        &:hover {
+                            &::after {
+                                animation: none;
+                            }
                         }
                     }
                 }
@@ -71,10 +81,10 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 4rem;
+            gap: 8rem;
 
             margin: 0 auto;
-            padding: 2rem;
+            padding: 4rem;
 
             &__home {
                 flex: 1;

@@ -5,12 +5,11 @@
         &__table {
             --cell-width: 30rem;
             --cell-height: 15rem;
-            --gap: 5rem;
 
             display: grid;
             grid-auto-rows: auto;
             grid-template-columns: repeat(auto-fill, var(--cell-width));
-            gap: var(--gap);
+            gap: 6rem;
             justify-content: flex-start;
 
             width: 100%;
