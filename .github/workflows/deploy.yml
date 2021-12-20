@@ -1,7 +1,7 @@
 name: Deployment Workflow
 on:
     push:
-        branches: [production]
+        branches: [main]
 
 jobs:
     deply_job:
@@ -18,9 +18,9 @@ jobs:
                   script: |
                       cd /repos/css-animations
                       git fetch
-                      git checkout production
+                      git checkout main
                       git reset --hard HEAD
-                      git pull origin production
+                      git pull origin main
                       npm i
                       ng build --base-href=/css-animations/
                       rm -rf /var/projects/bijanprogrammer.com/html/css-animations
