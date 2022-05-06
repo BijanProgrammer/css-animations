@@ -6,6 +6,7 @@ import {FillFromOneSideComponent} from './fill-from-one-side/fill-from-one-side.
 import {FillFromOppositeSideComponent} from './fill-from-opposite-side/fill-from-opposite-side.component';
 import {NuclearFusionComponent} from './nuclear-fusion/nuclear-fusion.component';
 import {LiftOffComponent} from './lift-off/lift-off.component';
+import {BlobComponent} from './blob/blob.component';
 
 @NgModule({
     declarations: [
@@ -15,6 +16,7 @@ import {LiftOffComponent} from './lift-off/lift-off.component';
         FillFromOppositeSideComponent,
         NuclearFusionComponent,
         LiftOffComponent,
+        BlobComponent,
     ],
     imports: [CommonModule],
 })

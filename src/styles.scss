@@ -91,7 +91,8 @@
 
     --shell--padding: 2rem;
 
-    --animation--duration--fast: 0.2s;
+    --animation--duration--fastest: 0.2s;
+    --animation--duration--fast: 0.35s;
     --animation--duration--normal: 0.5s;
     --animation--duration--slow: 1s;
 
@@ -141,7 +142,7 @@ button {
     &:not([disabled]) {
         cursor: pointer;
 
-        transition: all var(--animation--duration--fast);
+        transition: all var(--animation--duration--fastest);
 
         &.primary {
             background-color: var(--color--primary);

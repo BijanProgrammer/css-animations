@@ -1,0 +1,45 @@
+button {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+
+    transition-duration: var(--animation--duration--fast);
+
+    i {
+        background-color: var(--color--primary);
+
+        position: absolute;
+        inset-block-end: 0;
+        z-index: -1;
+
+        height: 300%;
+        width: 40%;
+
+        border-radius: 999rem;
+
+        transform: translateY(100%);
+
+        transition: transform var(--animation--duration--fast);
+
+        @for $i from 0 through 3 {
+            &:nth-of-type(#{$i + 1}) {
+                inset-inline-start: $i * 25% - 10%;
+
+                transition-delay: $i * 0.15s;
+            }
+        }
+    }
+
+    &:hover {
+        color: var(--color--primary-opposite);
+
+        i {
+            transform: translateY(50%);
+
+            @for $i from 0 through 3 {
+                &:nth-of-type(#{$i + 1}) {
+                }
+            }
+        }
+    }
+}

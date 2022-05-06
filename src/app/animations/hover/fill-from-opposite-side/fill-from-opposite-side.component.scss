@@ -5,7 +5,7 @@ button {
 
     &::before,
     &::after {
-        transition: all var(--animation--duration--fast);
+        transition: all var(--animation--duration--fastest);
     }
 
     &::before,
