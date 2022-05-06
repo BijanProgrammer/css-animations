@@ -5,11 +5,6 @@ button {
 
     &::before,
     &::after {
-        transition: all var(--animation--duration--normal);
-    }
-
-    &::before,
-    &::after {
         content: '';
 
         background-color: var(--color--primary-darker);
@@ -23,7 +18,11 @@ button {
         height: 80%;
         aspect-ratio: 1 / 1;
 
-        animation: hover--nuclear-fusion-fade-out var(--animation--duration--normal) backwards;
+        transition: all var(--animation--duration--normal);
+
+        :not(.noop) & {
+            animation: hover--nuclear-fusion-fade-out var(--animation--duration--normal);
+        }
     }
 
     &::before {

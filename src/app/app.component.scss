@@ -9,15 +9,4 @@
     main {
         flex: 1 0 0;
     }
-
-    &.noop {
-        ::ng-deep {
-            *,
-            *::before,
-            *::after {
-                transition-duration: 0s !important;
-                animation-duration: 0s !important;
-            }
-        }
-    }
 }

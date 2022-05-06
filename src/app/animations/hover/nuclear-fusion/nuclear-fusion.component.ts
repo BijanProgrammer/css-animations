@@ -6,4 +6,6 @@ import {AnimationComponent} from '../../../models/animation-component';
     templateUrl: './nuclear-fusion.component.html',
     styleUrls: ['./nuclear-fusion.component.scss'],
 })
-export class NuclearFusionComponent implements AnimationComponent {}
+export class NuclearFusionComponent implements AnimationComponent {
+    public noop: boolean = true;
+}

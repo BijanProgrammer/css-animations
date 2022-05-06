@@ -14,6 +14,7 @@ export class HeaderComponent {
     public Theme = Theme;
 
     public isInHome: boolean = false;
+    public noop: boolean = true;
 
     public constructor(private router: Router, public themeService: ThemeService) {
         router.events.subscribe((event) => {

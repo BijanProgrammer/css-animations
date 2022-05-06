@@ -8,4 +8,5 @@ import {AnimationComponent} from '../../../models/animation-component';
 })
 export class ConcentricCirclesComponent implements AnimationComponent {
     @Input() public count: number = 10;
+    @Input() public color?: string;
 }

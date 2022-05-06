@@ -29,7 +29,13 @@
                 width: 100%;
                 height: 0.2rem;
 
-                animation: app--slide-out var(--animation--duration--fastest) forwards;
+                transform: translateX(100%);
+            }
+
+            &:not(.noop) {
+                &::after {
+                    animation: app--slide-out var(--animation--duration--fastest);
+                }
             }
 
             &__link {
