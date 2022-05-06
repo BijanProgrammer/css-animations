@@ -18,10 +18,10 @@
     --color--default-background: var(--color-gray-98);
     --color--default-foreground: var(--color-gray-10);
 
-    --color--primary: hsl(var(--primary-hue), 100%, 56%);
-    --color--primary-fade: hsl(var(--primary-hue), 100%, 96%);
-    --color--primary-lighter: hsl(var(--primary-hue), 100%, 60%);
-    --color--primary-darker: hsl(var(--primary-hue), 100%, 52%);
+    --color--primary: hsl(var(--primary-hue), 60%, 60%);
+    --color--primary-fade: hsl(var(--primary-hue), 60%, 96%);
+    --color--primary-lighter: hsl(var(--primary-hue), 60%, 64%);
+    --color--primary-darker: hsl(var(--primary-hue), 60%, 56%);
     --color--primary-opposite: var(--color-gray-98);
 
     --color--secondary: hsl(var(--secondary-hue), 50%, 50%);
@@ -141,8 +141,22 @@ button {
     &:not([disabled]) {
         cursor: pointer;
 
-        &:hover {
-            filter: brightness(90%);
+        transition: all var(--animation--duration--fast);
+
+        &.primary {
+            background-color: var(--color--primary);
+            color: var(--color--primary-opposite);
+
+            &:hover {
+                background-color: var(--color--primary-darker);
+            }
+        }
+
+        &.primary--outline {
+            background-color: var(--color--primary-fade);
+            color: var(--color--primary);
+
+            border: 2px solid currentColor;
         }
     }
 

@@ -1,17 +1,7 @@
 button {
-    background-color: var(--color--primary-fade);
-    color: var(--color--primary);
-
     position: relative;
     overflow: hidden;
     isolation: isolate;
-
-    border: 2px solid currentColor;
-
-    &,
-    &::before {
-        transition: all var(--animation--duration--fast);
-    }
 
     &::before {
         content: '';
@@ -26,6 +16,8 @@ button {
         z-index: -1;
 
         transform: translateX(calc(-100% - 0.1rem));
+
+        transition: all var(--animation--duration--fast);
     }
 
     &:hover {

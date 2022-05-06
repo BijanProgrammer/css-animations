@@ -1,13 +1,7 @@
 button {
-    background-color: var(--color--primary-fade);
-    color: var(--color--primary);
-
     position: relative;
     overflow: hidden;
 
-    border: 2px solid currentColor;
-
-    &,
     &::before,
     &::after {
         transition: all var(--animation--duration--normal);
