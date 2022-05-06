@@ -30,10 +30,6 @@ export class GalleryComponent {
             title: 'loading',
             animations: [ConcentricCirclesComponent, PlayfulRopeComponent],
         },
-        {
-            title: 'coming soon ...',
-            animations: [],
-        },
     ];
 
     public currentRoute!: string[];
