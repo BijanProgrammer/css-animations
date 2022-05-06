@@ -21,18 +21,21 @@ export class GalleryComponent {
         {
             title: 'hover',
             animations: [
-                ExpandComponent,
-                LiftOffComponent,
-                FillComponent,
-                FillFromOneSideComponent,
-                FillFromOppositeSideComponent,
-                NuclearFusionComponent,
-                BlobComponent,
+                {title: 'Expand', component: ExpandComponent},
+                {title: 'LiftOff', component: LiftOffComponent},
+                {title: 'Fill', component: FillComponent},
+                {title: 'FillFromOneSide', component: FillFromOneSideComponent},
+                {title: 'FillFromOppositeSide', component: FillFromOppositeSideComponent},
+                {title: 'NuclearFusion', component: NuclearFusionComponent},
+                {title: 'Blob', component: BlobComponent},
             ],
         },
         {
             title: 'loading',
-            animations: [ConcentricCirclesComponent, PlayfulRopeComponent],
+            animations: [
+                {title: 'ConcentricCircles', component: ConcentricCirclesComponent},
+                {title: 'PlayfulRope', component: PlayfulRopeComponent},
+            ],
         },
     ];
 

@@ -7,7 +7,7 @@
 
 <ol class="gallery__table">
     <li class="gallery__table__cell" *ngFor="let animation of animations">
-        <span class="gallery__table__cell__title">{{ animation | componentToTitle | pascalCaseToTitleCase }}</span>
+        <span class="gallery__table__cell__title">{{ animation.title | pascalCaseToTitleCase }}</span>
         <ng-template appAnimation></ng-template>
     </li>
 </ol>

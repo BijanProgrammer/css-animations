@@ -5,11 +5,10 @@ import {
     ComponentFactoryResolver,
     Input,
     QueryList,
-    Type,
     ViewChildren,
 } from '@angular/core';
 import {AnimationDirective} from '../../../directives/animation.directive';
-import {AnimationComponent} from '../../../models/animation-component';
+import {CssAnimation} from '../../../models/css-animation';
 
 @Component({
     selector: 'app-animations-wrapper',
@@ -18,7 +17,7 @@ import {AnimationComponent} from '../../../models/animation-component';
 })
 export class AnimationsWrapperComponent implements AfterViewInit {
     @Input() public title!: string;
-    @Input() public animations!: Type<AnimationComponent>[];
+    @Input() public animations!: CssAnimation[];
 
     @ViewChildren(AnimationDirective) private hosts!: QueryList<AnimationDirective>;
 
@@ -40,7 +39,7 @@ export class AnimationsWrapperComponent implements AfterViewInit {
 
             viewContainerRef.clear();
 
-            const factory = this.resolver.resolveComponentFactory(animation);
+            const factory = this.resolver.resolveComponentFactory(animation.component);
             viewContainerRef.createComponent(factory);
         });
 
