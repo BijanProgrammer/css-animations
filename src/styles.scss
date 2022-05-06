@@ -83,7 +83,7 @@
     --color--popper-background: var(--color-gray-20);
     --color--popper-foreground: var(--color--default-background);
 
-    --color--box-shadow--subtle: hsla(0, 0%, 10%, 12%);
+    --color--box-shadow--subtle: hsla(0, 0%, 10%, 30%);
     --box-shadow--subtle: 0 0.2rem 0.5rem 0 var(--color--box-shadow--subtle);
 
     --full-width: 192rem;
@@ -134,7 +134,7 @@ button {
     padding: 0.75rem 1.5rem;
 
     border: none;
-    border-radius: 999rem;
+    border-radius: 0.2rem;
 
     font-weight: 500;
 
@@ -176,8 +176,6 @@ body {
     background-color: var(--color--body-background);
     color: var(--color--body-foreground);
 
-    width: 100%;
-
     padding-inline: var(--full-width-padding-inline);
 
     font-size: 1.6rem;
@@ -187,98 +185,6 @@ body {
     display: flex;
     flex-direction: column;
     gap: var(--gap, 4rem);
-}
-
-form {
-    --gap: 1.2rem;
-
-    label {
-        display: flex;
-        flex-direction: column;
-
-        min-width: 23ch;
-
-        input {
-            padding: 0.5rem;
-
-            border: 1px solid var(--color--input-border);
-            border-radius: 0.3rem;
-        }
-    }
-
-    button {
-        &[type='submit'] {
-            background-color: var(--color--primary);
-            color: var(--color--primary-opposite);
-        }
-    }
-
-    &.vertical {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: var(--gap);
-
-        width: max-content;
-    }
-
-    &.horizontal {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: flex-end;
-        gap: var(--gap);
-    }
-}
-
-button {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-
-    font-family: inherit;
-    font-weight: 500;
-}
-
-.table {
-    display: table;
-
-    width: 100%;
-
-    border-collapse: collapse;
-
-    &,
-    th,
-    td {
-        border: 1px solid var(--color--border--fade);
-    }
-
-    th,
-    td {
-        padding: 1rem;
-    }
-
-    &--horizontal {
-    }
-}
-
-.card {
-    box-shadow: var(--box-shadow--subtle);
-
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-
-    padding: 2rem;
-
-    header {
-    }
-
-    main {
-    }
-}
-
-.preserve-whitespace {
-    white-space: pre;
 }
 
 // KEYFRAMES
@@ -297,17 +203,5 @@ button {
     }
     to {
         transform: translateX(100%);
-    }
-}
-
-@keyframes hover--nuclear-fusion {
-    50% {
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-
-    100% {
-        left: 50%;
-        transform: translate(-50%, -50%) scale(10);
     }
 }

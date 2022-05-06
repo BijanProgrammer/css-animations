@@ -4,7 +4,7 @@ button {
 
     border: 2px solid var(--color--primary);
 
-    transition: all var(--animation--duration--fast) ease-in-out;
+    transition: all var(--animation--duration--fast);
 
     &:hover {
         background-color: var(--color--primary-darker);

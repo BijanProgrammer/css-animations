@@ -8,6 +8,7 @@ import {FillComponent} from '../../animations/hover/fill/fill.component';
 import {FillFromOneSideComponent} from '../../animations/hover/fill-from-one-side/fill-from-one-side.component';
 import {FillFromOppositeSideComponent} from '../../animations/hover/fill-from-opposite-side/fill-from-opposite-side.component';
 import {NuclearFusionComponent} from '../../animations/hover/nuclear-fusion/nuclear-fusion.component';
+import {LiftOffComponent} from '../../animations/hover/lift-off/lift-off.component';
 
 @Component({
     selector: 'app-gallery',
@@ -20,6 +21,7 @@ export class GalleryComponent {
             title: 'hover',
             animations: [
                 ExpandComponent,
+                LiftOffComponent,
                 FillComponent,
                 FillFromOneSideComponent,
                 FillFromOppositeSideComponent,

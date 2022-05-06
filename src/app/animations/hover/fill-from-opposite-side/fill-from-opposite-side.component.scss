@@ -4,13 +4,14 @@ button {
 
     position: relative;
     overflow: hidden;
+    isolation: isolate;
 
     border: 2px solid currentColor;
 
     &,
     &::before,
     &::after {
-        transition: all var(--animation--duration--fast) ease-in-out;
+        transition: all var(--animation--duration--fast);
     }
 
     &::before,
@@ -28,11 +29,11 @@ button {
     }
 
     &::before {
-        transform: translateX(-100%);
+        transform: translateX(calc(-100% - 0.1rem));
     }
 
     &::after {
-        transform: translateX(100%);
+        transform: translateX(calc(100% + 0.1rem));
     }
 
     &:hover {
@@ -45,8 +46,14 @@ button {
         &::before,
         &::after {
             background-color: var(--color--primary-darker);
+        }
 
-            transform: translateX(0%);
+        &::before {
+            transform: translateX(calc(-50% + 0.1rem));
+        }
+
+        &::after {
+            transform: translateX(calc(50% - 0.1rem));
         }
     }
 }

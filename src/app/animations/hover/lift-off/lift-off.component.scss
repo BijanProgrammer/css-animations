@@ -2,13 +2,14 @@ button {
     background-color: var(--color--primary);
     color: var(--color--primary-opposite);
 
-    transform: scale(1);
+    transform: translateY(0);
 
     transition: all var(--animation--duration--fast);
 
     &:hover {
         background-color: var(--color--primary-darker);
+        box-shadow: var(--box-shadow--subtle);
 
-        transform: scale(1.1);
+        transform: translateY(-0.15rem);
     }
 }

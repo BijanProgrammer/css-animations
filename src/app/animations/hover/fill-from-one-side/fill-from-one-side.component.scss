@@ -4,12 +4,13 @@ button {
 
     position: relative;
     overflow: hidden;
+    isolation: isolate;
 
     border: 2px solid currentColor;
 
     &,
     &::before {
-        transition: all var(--animation--duration--fast) ease-in-out;
+        transition: all var(--animation--duration--fast);
     }
 
     &::before {
@@ -24,7 +25,7 @@ button {
         bottom: 0;
         z-index: -1;
 
-        transform: translateX(-100%);
+        transform: translateX(calc(-100% - 0.1rem));
     }
 
     &:hover {

@@ -6,6 +6,6 @@ import {AnimationComponent} from '../models/animation-component';
 })
 export class ComponentToTitlePipe implements PipeTransform {
     public transform(component: Type<AnimationComponent>): string {
-        return component.name;
+        return component.name.replace('Component', '');
     }
 }

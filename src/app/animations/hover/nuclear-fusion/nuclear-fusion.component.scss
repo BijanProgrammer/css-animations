@@ -10,7 +10,7 @@ button {
     &,
     &::before,
     &::after {
-        transition: all var(--animation--duration--normal) ease-in-out;
+        transition: all var(--animation--duration--normal);
     }
 
     &::before,
@@ -50,7 +50,19 @@ button {
         &::after {
             background-color: var(--color--primary-darker);
 
-            animation: hover--nuclear-fusion var(--animation--duration--normal) ease-in-out forwards;
+            animation: hover--nuclear-fusion var(--animation--duration--normal) forwards;
         }
+    }
+}
+
+@keyframes hover--nuclear-fusion {
+    50% {
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    100% {
+        left: 50%;
+        transform: translate(-50%, -50%) scale(10);
     }
 }
