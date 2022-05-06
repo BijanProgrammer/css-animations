@@ -19,19 +19,16 @@ export class GalleryComponent {
         {
             title: 'hover',
             animations: [
-                {title: 'Expand', component: ExpandComponent},
-                {title: 'Fill', component: FillComponent},
-                {title: 'FillFromOneSide', component: FillFromOneSideComponent},
-                {title: 'FillFromOppositeSide', component: FillFromOppositeSideComponent},
-                {title: 'NuclearFusion', component: NuclearFusionComponent},
+                ExpandComponent,
+                FillComponent,
+                FillFromOneSideComponent,
+                FillFromOppositeSideComponent,
+                NuclearFusionComponent,
             ],
         },
         {
             title: 'loading',
-            animations: [
-                {title: 'ConcentricCircles', component: ConcentricCirclesComponent},
-                {title: 'PlayfulRope', component: PlayfulRopeComponent},
-            ],
+            animations: [ConcentricCirclesComponent, PlayfulRopeComponent],
         },
         {
             title: 'coming soon ...',

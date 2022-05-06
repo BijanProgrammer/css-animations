@@ -1,6 +1,7 @@
-import {CssAnimation} from './css-animation';
+import {AnimationComponent} from './animation-component';
+import {Type} from '@angular/core';
 
 export class Category {
     public title!: string;
-    public animations!: CssAnimation[];
+    public animations!: Type<AnimationComponent>[];
 }
