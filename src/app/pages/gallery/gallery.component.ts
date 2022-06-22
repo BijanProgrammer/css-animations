@@ -10,6 +10,7 @@ import {FillFromOppositeSideComponent} from '../../animations/hover/fill-from-op
 import {NuclearFusionComponent} from '../../animations/hover/nuclear-fusion/nuclear-fusion.component';
 import {LiftOffComponent} from '../../animations/hover/lift-off/lift-off.component';
 import {BlobComponent} from '../../animations/hover/blob/blob.component';
+import {InfinityParticlesComponent} from '../../animations/loading/infinity-particles/infinity-particles.component';
 
 @Component({
     selector: 'app-gallery',
@@ -35,6 +36,7 @@ export class GalleryComponent {
             animations: [
                 {title: 'ConcentricCircles', component: ConcentricCirclesComponent},
                 {title: 'PlayfulRope', component: PlayfulRopeComponent},
+                {title: 'InfinityParticles', component: InfinityParticlesComponent},
             ],
         },
     ];
