@@ -16,12 +16,13 @@
             border-color: currentColor transparent transparent currentColor;
             border-radius: 999rem;
 
-            animation: loading-animation calc(var(--count, 4) * var(--animation--duration--normal)) linear infinite;
+            animation: playful-rope-loading-animation calc(var(--count, 4) * var(--animation--duration--normal)) linear
+                infinite;
         }
     }
 }
 
-@keyframes loading-animation {
+@keyframes playful-rope-loading-animation {
     to {
         transform: rotate(360deg);
     }
