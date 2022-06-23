@@ -4,7 +4,7 @@ button {
     isolation: isolate;
 
     &::before {
-        content: '';
+        content: "";
 
         background-color: var(--color--primary-darker);
 

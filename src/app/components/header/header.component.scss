@@ -17,7 +17,7 @@
             margin-inline-end: auto;
 
             &::after {
-                content: '';
+                content: "";
 
                 background-color: currentColor;
 
@@ -56,7 +56,7 @@
             cursor: pointer;
 
             &::before {
-                content: '';
+                content: "";
 
                 opacity: 0.1;
 

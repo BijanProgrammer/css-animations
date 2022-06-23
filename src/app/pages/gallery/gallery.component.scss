@@ -38,7 +38,7 @@
                     transition: color var(--animation--duration--fastest);
 
                     &::after {
-                        content: '';
+                        content: "";
 
                         background-color: currentColor;
 
@@ -119,7 +119,7 @@
 
                     &::before,
                     &::after {
-                        content: ' ';
+                        content: " ";
                     }
                 }
             }
