@@ -11,6 +11,7 @@ import {NuclearFusionComponent} from '../../animations/hover/nuclear-fusion/nucl
 import {LiftOffComponent} from '../../animations/hover/lift-off/lift-off.component';
 import {BlobComponent} from '../../animations/hover/blob/blob.component';
 import {InfinityParticlesComponent} from '../../animations/loading/infinity-particles/infinity-particles.component';
+import {SlicedLoopComponent} from '../../animations/loading/sliced-loop/sliced-loop.component';
 
 @Component({
     selector: 'app-gallery',
@@ -37,6 +38,7 @@ export class GalleryComponent {
                 {title: 'ConcentricCircles', component: ConcentricCirclesComponent},
                 {title: 'PlayfulRope', component: PlayfulRopeComponent},
                 {title: 'InfinityParticles', component: InfinityParticlesComponent},
+                {title: 'SlicedLoop', component: SlicedLoopComponent},
             ],
         },
     ];

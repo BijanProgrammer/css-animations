@@ -1,0 +1,67 @@
+.sliced-loop {
+    --loop-size: 2em;
+    --animation: sliced-loop-loading-animation 4s ease-in-out infinite;
+
+    display: grid;
+    grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+
+    animation: var(--animation);
+
+    .loop {
+        position: relative;
+        overflow: hidden;
+
+        width: var(--loop-size);
+        height: var(--loop-size);
+
+        &::before {
+            content: "";
+
+            position: absolute;
+
+            display: block;
+
+            width: calc(2 * var(--loop-size));
+            height: calc(2 * var(--loop-size));
+
+            border: 0.5em solid var(--color--primary);
+            border-radius: 999rem;
+
+            clip-path: polygon(0% 0%, 48% 0%, 48% 48%, 0% 48%);
+
+            animation: var(--animation);
+        }
+
+        &:nth-of-type(2) {
+            transform: rotate(90deg);
+        }
+
+        &:nth-of-type(3) {
+            transform: rotate(270deg);
+        }
+
+        &:nth-of-type(4) {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+@keyframes sliced-loop-loading-animation {
+    0%,
+    20% {
+        transform: rotate(0) scale(1);
+    }
+
+    50%,
+    60% {
+        transform: rotate(30deg) scale(0.8);
+    }
+
+    80% {
+        transform: rotate(270deg) scale(0.8);
+    }
+
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+}

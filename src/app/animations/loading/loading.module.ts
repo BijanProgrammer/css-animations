@@ -5,6 +5,7 @@ import {ConcentricCircleComponent} from './concentric-circles/circle/concentric-
 import {PlayfulRopeComponent} from './playful-rope/playful-rope.component';
 import {PlayfulRopePartComponent} from './playful-rope/circle/playful-rope-part.component';
 import {InfinityParticlesComponent} from './infinity-particles/infinity-particles.component';
+import {SlicedLoopComponent} from './sliced-loop/sliced-loop.component';
 
 @NgModule({
     declarations: [
@@ -13,6 +14,7 @@ import {InfinityParticlesComponent} from './infinity-particles/infinity-particle
         PlayfulRopeComponent,
         PlayfulRopePartComponent,
         InfinityParticlesComponent,
+        SlicedLoopComponent,
     ],
     exports: [ConcentricCirclesComponent, PlayfulRopeComponent],
     imports: [CommonModule],
