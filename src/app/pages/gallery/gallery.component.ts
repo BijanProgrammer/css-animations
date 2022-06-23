@@ -36,9 +36,9 @@ export class GalleryComponent {
             title: 'loading',
             animations: [
                 {title: 'ConcentricCircles', component: ConcentricCirclesComponent},
-                {title: 'PlayfulRope', component: PlayfulRopeComponent},
                 {title: 'InfinityParticles', component: InfinityParticlesComponent},
                 {title: 'SlicedLoop', component: SlicedLoopComponent},
+                {title: 'PlayfulRope', component: PlayfulRopeComponent},
             ],
         },
     ];
