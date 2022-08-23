@@ -2,7 +2,6 @@ import {Component} from '@angular/core';
 import {Category} from '../../models/category';
 import {NavigationEnd, Router} from '@angular/router';
 import {ConcentricCirclesComponent} from '../../animations/loading/concentric-circles/concentric-circles.component';
-import {PlayfulRopeComponent} from '../../animations/loading/playful-rope/playful-rope.component';
 import {ExpandComponent} from '../../animations/hover/expand/expand.component';
 import {FillComponent} from '../../animations/hover/fill/fill.component';
 import {FillFromOneSideComponent} from '../../animations/hover/fill-from-one-side/fill-from-one-side.component';
@@ -40,7 +39,6 @@ export class GalleryComponent {
                 {title: 'InfinityParticles', component: InfinityParticlesComponent},
                 {title: 'SlicedLoop', component: SlicedLoopComponent},
                 {title: 'TriangularElectrons', component: TriangularElectronsComponent},
-                {title: 'PlayfulRope', component: PlayfulRopeComponent},
             ],
         },
     ];
