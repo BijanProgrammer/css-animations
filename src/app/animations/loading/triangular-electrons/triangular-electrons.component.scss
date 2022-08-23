@@ -1,0 +1,65 @@
+@use "sass:math";
+
+.spinner {
+    --particle-size: 1rem;
+    --maximum-offset: 5rem;
+    --minimum-offset: 4rem;
+    --container-size: calc(2 * var(--maximum-offset));
+
+    color: var(--color--primary);
+
+    display: grid;
+    place-items: center;
+
+    block-size: var(--container-size);
+    inline-size: var(--container-size);
+
+    i {
+        background-color: currentcolor;
+
+        position: absolute;
+
+        display: block;
+
+        block-size: var(--particle-size);
+        inline-size: var(--particle-size);
+
+        border-radius: 999rem;
+
+        animation: triangular-electrons-loading-animation 1s var(--delay) ease-in-out infinite;
+
+        &:nth-of-type(2n) {
+            --offset: var(--maximum-offset);
+        }
+
+        &:nth-of-type(2n + 1) {
+            --offset: var(--minimum-offset);
+        }
+
+        $particles-count: 24;
+        $base-angle: math.div(360, $particles-count);
+        $base-delay: -0.9;
+
+        @for $i from 1 through $particles-count {
+            &:nth-of-type(#{ $i }) {
+                --angle: #{($i - 1) * $base-angle + "deg"};
+                --delay: #{($i - 1) * $base-delay + "s"};
+            }
+        }
+    }
+}
+
+@keyframes triangular-electrons-loading-animation {
+    0%,
+    100% {
+        transform: rotate(var(--angle)) translateX(0);
+    }
+
+    25% {
+        transform: rotate(var(--angle)) translateX(var(--offset));
+    }
+
+    75% {
+        transform: rotate(var(--angle)) translateX(calc(-1 * var(--offset)));
+    }
+}

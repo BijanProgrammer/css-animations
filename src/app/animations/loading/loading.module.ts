@@ -6,6 +6,7 @@ import {PlayfulRopeComponent} from './playful-rope/playful-rope.component';
 import {PlayfulRopePartComponent} from './playful-rope/circle/playful-rope-part.component';
 import {InfinityParticlesComponent} from './infinity-particles/infinity-particles.component';
 import {SlicedLoopComponent} from './sliced-loop/sliced-loop.component';
+import {TriangularElectronsComponent} from './triangular-electrons/triangular-electrons.component';
 
 @NgModule({
     declarations: [
@@ -15,6 +16,7 @@ import {SlicedLoopComponent} from './sliced-loop/sliced-loop.component';
         PlayfulRopePartComponent,
         InfinityParticlesComponent,
         SlicedLoopComponent,
+        TriangularElectronsComponent,
     ],
     exports: [ConcentricCirclesComponent, PlayfulRopeComponent],
     imports: [CommonModule],
