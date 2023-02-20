@@ -12,6 +12,7 @@ import {BlobComponent} from '../../animations/hover/blob/blob.component';
 import {InfinityParticlesComponent} from '../../animations/loading/infinity-particles/infinity-particles.component';
 import {SlicedLoopComponent} from '../../animations/loading/sliced-loop/sliced-loop.component';
 import {TriangularElectronsComponent} from '../../animations/loading/triangular-electrons/triangular-electrons.component';
+import {LowFrameSpinnerComponent} from '../../animations/loading/low-frame-spinner/low-frame-spinner.component';
 
 @Component({
     selector: 'app-gallery',
@@ -39,6 +40,7 @@ export class GalleryComponent {
                 {title: 'InfinityParticles', component: InfinityParticlesComponent},
                 {title: 'SlicedLoop', component: SlicedLoopComponent},
                 {title: 'TriangularElectrons', component: TriangularElectronsComponent},
+                {title: 'LowFrameSpinner', component: LowFrameSpinnerComponent},
             ],
         },
     ];

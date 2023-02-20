@@ -5,6 +5,7 @@ import {ConcentricCircleComponent} from './concentric-circles/circle/concentric-
 import {InfinityParticlesComponent} from './infinity-particles/infinity-particles.component';
 import {SlicedLoopComponent} from './sliced-loop/sliced-loop.component';
 import {TriangularElectronsComponent} from './triangular-electrons/triangular-electrons.component';
+import {LowFrameSpinnerComponent} from './low-frame-spinner/low-frame-spinner.component';
 
 @NgModule({
     declarations: [
@@ -13,6 +14,7 @@ import {TriangularElectronsComponent} from './triangular-electrons/triangular-el
         InfinityParticlesComponent,
         SlicedLoopComponent,
         TriangularElectronsComponent,
+        LowFrameSpinnerComponent,
     ],
     exports: [ConcentricCirclesComponent],
     imports: [CommonModule],

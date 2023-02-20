@@ -1,0 +1,56 @@
+@use "sass:math";
+
+.spinner {
+    --spinner-size: 10rem;
+    --rotation-radius: 0;
+
+    display: grid;
+    place-items: center;
+
+    width: calc(var(--spinner-size));
+    height: calc(var(--spinner-size));
+
+    animation: low-frame-spinner-loading-animation 8s linear infinite;
+
+    .particle {
+        --rotation-radius: calc(var(--spinner-size) * 0.5);
+
+        grid-area: 1 / 1;
+
+        background-color: var(--color--primary);
+        opacity: var(--opacity);
+
+        display: block;
+
+        width: var(--size);
+        height: var(--size);
+
+        border-radius: 999rem;
+
+        //noinspection CssInvalidFunction
+        animation: low-frame-spinner-loading-animation 2s cubic-bezier(calc(0.5 + var(--offset)), 0, 0.5, 1) infinite;
+
+        $particles-count: 20;
+        $base-opacity: math.div(1, $particles-count);
+        $base-size: math.div(2, $particles-count);
+        $base-offset: math.div(0.5, $particles-count);
+
+        @for $i from 1 through $particles-count {
+            &:nth-of-type(#{ $i }) {
+                --opacity: #{($particles-count - $i) * $base-opacity};
+                --size: #{($particles-count - $i) * $base-size + "rem"};
+                --offset: #{($i - 1) * $base-offset};
+            }
+        }
+    }
+}
+
+@keyframes low-frame-spinner-loading-animation {
+    0% {
+        transform: rotate(0) translateX(var(--rotation-radius));
+    }
+
+    100% {
+        transform: rotate(360deg) translateX(var(--rotation-radius));
+    }
+}
