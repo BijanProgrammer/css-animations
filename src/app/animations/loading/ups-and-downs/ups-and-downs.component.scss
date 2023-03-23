@@ -1,0 +1,43 @@
+@use "sass:math";
+
+.particles {
+    --offset: 4rem;
+    --particle-size: 1em;
+
+    display: flex;
+    gap: 0.5rem;
+
+    min-height: calc(var(--offset) + var(--particle-size));
+
+    .particle {
+        background-color: var(--color--primary);
+
+        display: block;
+
+        width: var(--particle-size);
+        height: var(--particle-size);
+
+        border-radius: 999rem;
+
+        animation: ups-and-downs-loading-animation 0.5s ease-in-out infinite alternate-reverse;
+
+        $particles-count: 8;
+        $base-delay: -1 * math.div(0.5, $particles-count);
+
+        @for $i from 1 through $particles-count {
+            &:nth-of-type(#{ $i }) {
+                animation-delay: #{($i - 1) * $base-delay * 2.4 + "s"};
+            }
+        }
+    }
+}
+
+@keyframes ups-and-downs-loading-animation {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(var(--offset));
+    }
+}

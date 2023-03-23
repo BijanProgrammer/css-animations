@@ -9,6 +9,7 @@ import {FillFromOppositeSideComponent} from '../../animations/hover/fill-from-op
 import {NuclearFusionComponent} from '../../animations/hover/nuclear-fusion/nuclear-fusion.component';
 import {LiftOffComponent} from '../../animations/hover/lift-off/lift-off.component';
 import {BlobComponent} from '../../animations/hover/blob/blob.component';
+import {UpsAndDownsComponent} from '../../animations/loading/ups-and-downs/ups-and-downs.component';
 import {InfinityParticlesComponent} from '../../animations/loading/infinity-particles/infinity-particles.component';
 import {SlicedLoopComponent} from '../../animations/loading/sliced-loop/sliced-loop.component';
 import {TriangularElectronsComponent} from '../../animations/loading/triangular-electrons/triangular-electrons.component';
@@ -37,6 +38,7 @@ export class GalleryComponent {
             title: 'loading',
             animations: [
                 {title: 'ConcentricCircles', component: ConcentricCirclesComponent},
+                {title: 'UpsAndDowns', component: UpsAndDownsComponent},
                 {title: 'InfinityParticles', component: InfinityParticlesComponent},
                 {title: 'SlicedLoop', component: SlicedLoopComponent},
                 {title: 'TriangularElectrons', component: TriangularElectronsComponent},

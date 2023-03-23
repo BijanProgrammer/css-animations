@@ -6,6 +6,7 @@ import {InfinityParticlesComponent} from './infinity-particles/infinity-particle
 import {SlicedLoopComponent} from './sliced-loop/sliced-loop.component';
 import {TriangularElectronsComponent} from './triangular-electrons/triangular-electrons.component';
 import {LowFrameSpinnerComponent} from './low-frame-spinner/low-frame-spinner.component';
+import {UpsAndDownsComponent} from './ups-and-downs/ups-and-downs.component';
 
 @NgModule({
     declarations: [
@@ -15,6 +16,7 @@ import {LowFrameSpinnerComponent} from './low-frame-spinner/low-frame-spinner.co
         SlicedLoopComponent,
         TriangularElectronsComponent,
         LowFrameSpinnerComponent,
+        UpsAndDownsComponent,
     ],
     exports: [ConcentricCirclesComponent],
     imports: [CommonModule],
