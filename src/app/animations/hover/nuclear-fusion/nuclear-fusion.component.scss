@@ -21,7 +21,7 @@ button {
         transition: all var(--animation--duration--normal);
 
         :not(.noop) & {
-            animation: hover--nuclear-fusion-fade-out var(--animation--duration--normal);
+            animation: fade-out-animation var(--animation--duration--normal);
         }
     }
 
@@ -44,12 +44,12 @@ button {
 
         &::before,
         &::after {
-            animation: hover--nuclear-fusion-fade-in var(--animation--duration--normal) forwards;
+            animation: fade-in-animation var(--animation--duration--normal) forwards;
         }
     }
 }
 
-@keyframes hover--nuclear-fusion-fade-in {
+@keyframes fade-in-animation {
     50% {
         left: 50%;
         transform: translate(-50%, -50%);
@@ -61,7 +61,7 @@ button {
     }
 }
 
-@keyframes hover--nuclear-fusion-fade-out {
+@keyframes fade-out-animation {
     0% {
         left: 50%;
         transform: translate(-50%, -50%) scale(10);

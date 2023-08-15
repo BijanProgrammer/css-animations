@@ -24,7 +24,7 @@
 
         transform-origin: calc(var(--particle-size) / 2 + var(--rotation-radius)) calc(var(--particle-size) / 2);
 
-        animation: infinity-particles-loading-animation var(--duration) var(--delay) linear infinite;
+        animation: particle-animation var(--duration) var(--delay) linear infinite;
 
         &:nth-of-type(2n) {
             --rotation-radius: var(--base-rotation-radius);
@@ -38,7 +38,7 @@
     }
 }
 
-@keyframes infinity-particles-loading-animation {
+@keyframes particle-animation {
     0% {
         opacity: 1;
         transform: rotate(0);

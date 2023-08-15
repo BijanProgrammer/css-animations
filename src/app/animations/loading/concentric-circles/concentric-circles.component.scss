@@ -13,13 +13,12 @@
             border-color: currentColor transparent transparent currentColor;
             border-radius: 999rem;
 
-            animation: concentric-circles-loading-animation calc(var(--count, 4) * var(--animation--duration--normal))
-                linear infinite;
+            animation: circle-animation calc(var(--count, 4) * var(--animation--duration--normal)) linear infinite;
         }
     }
 }
 
-@keyframes concentric-circles-loading-animation {
+@keyframes circle-animation {
     to {
         transform: rotate(360deg);
     }

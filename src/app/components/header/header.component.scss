@@ -34,7 +34,7 @@
 
             &:not(.noop) {
                 &::after {
-                    animation: app--slide-out var(--animation--duration--fastest);
+                    animation: global-slide-out-animation var(--animation--duration--fastest);
                 }
             }
 
@@ -44,7 +44,7 @@
 
             &:hover {
                 &::after {
-                    animation: app--slide-in var(--animation--duration--fastest) forwards;
+                    animation: global-slide-in-animation var(--animation--duration--fastest) forwards;
                 }
             }
         }

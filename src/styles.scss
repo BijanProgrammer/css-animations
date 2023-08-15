@@ -204,7 +204,7 @@ body {
 }
 
 // KEYFRAMES
-@keyframes app--slide-in {
+@keyframes global-slide-in-animation {
     from {
         transform: translateX(-100%);
     }
@@ -213,7 +213,7 @@ body {
     }
 }
 
-@keyframes app--slide-out {
+@keyframes global-slide-out-animation {
     from {
         transform: translateX(0%);
     }

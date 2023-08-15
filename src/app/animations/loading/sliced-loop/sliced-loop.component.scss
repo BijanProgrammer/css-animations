@@ -1,6 +1,6 @@
 .sliced-loop {
     --loop-size: 2em;
-    --animation: sliced-loop-loading-animation 4s ease-in-out infinite;
+    --animation: loop-animation 4s ease-in-out infinite;
 
     display: grid;
     grid-template: repeat(2, 1fr) / repeat(2, 1fr);
@@ -46,7 +46,7 @@
     }
 }
 
-@keyframes sliced-loop-loading-animation {
+@keyframes loop-animation {
     0%,
     20% {
         transform: rotate(0) scale(1);

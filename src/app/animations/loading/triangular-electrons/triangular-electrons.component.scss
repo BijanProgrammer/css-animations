@@ -26,7 +26,7 @@
 
         border-radius: 999rem;
 
-        animation: triangular-electrons-loading-animation 1s var(--delay) ease-in-out infinite;
+        animation: particle-animation 1s var(--delay) ease-in-out infinite;
 
         &:nth-of-type(2n) {
             --offset: var(--maximum-offset);
@@ -49,7 +49,7 @@
     }
 }
 
-@keyframes triangular-electrons-loading-animation {
+@keyframes particle-animation {
     0%,
     100% {
         transform: rotate(var(--angle)) translateX(0);

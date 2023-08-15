@@ -10,7 +10,7 @@
     width: calc(var(--spinner-size));
     height: calc(var(--spinner-size));
 
-    animation: low-frame-spinner-loading-animation 8s linear infinite;
+    animation: rotation-animation 8s linear infinite;
 
     .particle {
         --rotation-radius: calc(var(--spinner-size) * 0.5);
@@ -28,7 +28,7 @@
         border-radius: 999rem;
 
         //noinspection CssInvalidFunction
-        animation: low-frame-spinner-loading-animation 2s cubic-bezier(calc(0.5 + var(--offset)), 0, 0.5, 1) infinite;
+        animation: rotation-animation 2s cubic-bezier(calc(0.5 + var(--offset)), 0, 0.5, 1) infinite;
 
         $particles-count: 20;
         $base-opacity: math.div(1, $particles-count);
@@ -45,7 +45,7 @@
     }
 }
 
-@keyframes low-frame-spinner-loading-animation {
+@keyframes rotation-animation {
     0% {
         transform: rotate(0) translateX(var(--rotation-radius));
     }
