@@ -1,27 +1,12 @@
-name: Deployment Workflow
+name: Deploy
 on:
     push:
-        branches: [main]
+        branches: [master]
 
 jobs:
-    deploy_job:
-        name: Deploy
-        runs-on: ubuntu-latest
-        steps:
-            - name: Establish a Connection to Server and Update Website
-              uses: appleboy/ssh-action@master
-              with:
-                  host: 130.185.76.173
-                  username: root
-                  key: ${{secrets.SSH_KEY}}
-                  port: 22
-                  script: |
-                      cd /repos/css-animations
-                      git fetch
-                      git checkout main
-                      git reset --hard HEAD
-                      git pull origin main
-                      npm i
-                      ng build --base-href=/css-animations/
-                      rm -rf /var/projects/bijanprogrammer.com/html/css-animations
-                      cp -a dist/css-animations/. /var/projects/bijanprogrammer.com/html/css-animations
+    deploy:
+        uses: BijanProgrammerWebsites/hub/.github/workflows/deploy-angular.yml@master
+        with:
+            host: projects.bijanprogrammer.com
+            base-href: /css-animations/
+            project-name: css-animations
