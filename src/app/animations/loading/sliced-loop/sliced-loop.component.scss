@@ -1,11 +1,10 @@
 .sliced-loop {
     --loop-size: 2em;
-    --animation: loop-animation 4s ease-in-out infinite;
 
     display: grid;
     grid-template: repeat(2, 1fr) / repeat(2, 1fr);
 
-    animation: var(--animation);
+    animation: loop-animation 4s ease-in-out infinite;
 
     .loop {
         position: relative;
@@ -29,7 +28,7 @@
 
             clip-path: polygon(0% 0%, 48% 0%, 48% 48%, 0% 48%);
 
-            animation: var(--animation);
+            animation: loop-animation 4s ease-in-out infinite;
         }
 
         &:nth-of-type(2) {
